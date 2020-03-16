@@ -17,6 +17,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final _width = Utils.bodyWidth;
     final _height = Utils.totalBodyHeight;
 
+    TextEditingController _usernameController = new TextEditingController();
+    TextEditingController _passController = new TextEditingController();
+
+    _test() {
+      print("dsadsad");
+      print(_passController.text);
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -36,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     margin: EdgeInsets.only(top: Utils.getDesignHeight(211)),
                     child: SizedBox(
-                      width: Utils.getDesignHeight(263),
+                      width: Utils.getDesignWidth(263),
                       height: Utils.getDesignHeight(53),
                       child: FittedBox(
                           fit: BoxFit.fitWidth,
@@ -47,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     margin: EdgeInsets.only(top: Utils.getDesignHeight(0)),
                     child: SizedBox(
-                      width: Utils.getDesignHeight(179),
+                      width: Utils.getDesignWidth(179),
                       height: Utils.getDesignHeight(27),
                       child: FittedBox(
                           fit: BoxFit.fitWidth,
@@ -57,16 +65,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Container(
                       margin: EdgeInsets.only(
-                          top: Utils.getDesignWidth(26),
+                          top: Utils.getDesignHeight(26),
                           left: Utils.getDesignWidth(23),
                           right: Utils.getDesignWidth(23)),
-                      child: CustomTextField("User Name",  CustomIcons.avatar)),
+                      child: CustomTextField(
+                        controller: _usernameController,
+                        inputFieldName: "Name",
+                        icon: CustomIcons.avatar,
+                      )),
                   Container(
                       margin: EdgeInsets.only(
-                          top: Utils.getDesignWidth(26),
+                          top: Utils.getDesignHeight(26),
                           left: Utils.getDesignWidth(23),
                           right: Utils.getDesignWidth(23)),
-                      child: CustomTextField("Password", CustomIcons.lock)),
+                      child: CustomTextField(
+                        controller: _passController,
+                        inputFieldName: "Password",
+                        icon: CustomIcons.lock,
+                      )),
                   Container(
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(
@@ -80,41 +96,45 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .body1
                                 .copyWith(fontSize: _width * 0.035))),
                   ),
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                          child: Container(
-                              height: Utils.getDesignHeight(48),
-                              margin: EdgeInsets.only(
-                                top: Utils.getDesignHeight(18),
-                                left: Utils.getDesignWidth(26),
-                                right: Utils.getDesignWidth(26),
-                              ),
-                              child: RaisedButton(
-                                  color: Theme.of(context).primaryColor,
-                                  child: Text(
-                                    "Login",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .body1
-                                        .copyWith(fontSize: _width * 0.038),
-                                  ),
-                                  onPressed: (() {})))),
-                    ],
+                  Container(
+                    width: _width,
+                    height: Utils.getDesignHeight(48),
+                    margin: EdgeInsets.only(
+                      top: Utils.getDesignHeight(18),
+                      left: Utils.getDesignWidth(26),
+                      right: Utils.getDesignWidth(26),
+                    ),
+                    child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(6)),
+                        color: Theme.of(context).primaryColor,
+                        child: Text(
+                          "Login",
+                          style: Theme.of(context)
+                              .textTheme
+                              .body1
+                              .copyWith(fontSize: _width * 0.038),
+                        ),
+                        onPressed: (() {
+                          _test();
+                        })),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top:Utils.getDesignHeight(48)),
+                    margin: EdgeInsets.only(top: Utils.getDesignHeight(48)),
                     child: Text.rich(
-
                       TextSpan(
                         text: 'First Time Here ? ',
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
                           TextSpan(
-                              recognizer: new TapGestureRecognizer()..onTap = () => print('Tap Here onTap'),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed('/sign_up_screen');
+                                },
                               text: 'Sign up',
-                              style: Theme.of(context).textTheme.body1.copyWith(decoration:TextDecoration.underline)),
-
+                              style: Theme.of(context).textTheme.body1.copyWith(
+                                  decoration: TextDecoration.underline)),
                         ],
                       ),
                     ),
