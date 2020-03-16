@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Utils.setScreenSizes(context);
     return Scaffold(
       body: Center(
-        child: Text("FOODPAL", style: Theme.of(context).textTheme.title.copyWith(color: Theme.of(context).primaryColor),),
+        child: Text("FOODPAL", style: Theme.of(context).textTheme.title.copyWith(color: Theme.of(context).accentColor),),
       ),
     );
   }

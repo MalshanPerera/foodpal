@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FoodPal',
       theme: ThemeData(
+          accentColor: Color(0xFF6EA809),
           primaryColor: Color(0xFF6EA809),
           highlightColor: Color(0xFF69708A),
           backgroundColor: Color(0xFFF5F5F7),
