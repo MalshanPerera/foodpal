@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/screens/forgot_password_screen.dart';
 import 'package:foodpal/screens/home_screen.dart';
 import 'package:foodpal/screens/login_screen.dart';
+import 'package:foodpal/screens/sign_up_otp_screen.dart';
 import 'package:foodpal/screens/sign_up_screen.dart';
 import 'package:foodpal/screens/splash_screen.dart';
 
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
         '/home_screen':(context) => HomeScreen(),
         '/login_screen':(context) => LoginScreen(),
         '/sign_up_screen':(context) => SignUpScreen(),
+        '/sign_up_otp_screen':(context) => SignUpOtpScreen(),
+        '/forgot_password_screen':(context) => ForgotPasswordScreen(),
       },
     );
   }
