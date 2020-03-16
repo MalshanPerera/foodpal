@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   _forYouTab(),
                   _mostPopular(),
+                  _ingredientsTab(),
                 ],
                 onPageChanged:(index) {
                   setState(() {
@@ -226,10 +226,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _mostPopular(){
     return Container(
       child: ListView.builder(
-        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
           return _mostPopularListTile();
+        },
+      ),
+    );
+  }
+
+  Widget _ingredientsTab(){
+    return Container(
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return _ingredientListTile();
         },
       ),
     );
@@ -410,6 +424,99 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ]
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _ingredientListTile(){
+    return Container(
+      margin: EdgeInsets.only(left: _width * 0.069, right: _width * 0.069, bottom: 10.0),
+      height: _height * 0.146,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).hintColor,
+            blurRadius: 1.0,
+            offset: Offset(
+              0.0, // horizontal, move right 10
+              1.0, // vertical, move down 10
+            ),
+          )
+        ],
+      ),
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: _width * 0.026),
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+               radius: _width * 0.116,
+              backgroundImage: AssetImage('assets/images/foodImageTwo.png'),
+            ),
+          ),
+          Container(
+            width: _width * 0.552,
+            margin: EdgeInsets.fromLTRB(_width * 0.026, _height * 0.012, _width * 0.026, _height * 0.012),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        width: _width * 0.33,
+                        child: Text("Roasted Chicken with Parmasean Cheese", style: Theme.of(context).textTheme.body2,),
+                      ),
+                      Container(
+                        child: Icon(Icons.favorite_border, color: Theme.of(context).accentColor, size: 20,),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: _height * 0.01),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Text("Protein", style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0),
+                        ),
+                      ),
+                      CircleIcon(),
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: Text("Lunch",
+                          style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0),
+                        ),
+                      ),
+                      CircleIcon(),
+                      Text("Low Fat",
+                        style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: _height * 0.005),
+                  child: Text("1235 Kcal (500g)",
+                    style: Theme.of(context).textTheme.body2,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: _height * 0.013),
+                  alignment: Alignment.centerRight,
+                  child: Text("45 mins - 1 hour",
+                    style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0, color: Theme.of(context).accentColor),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

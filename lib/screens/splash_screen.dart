@@ -32,6 +32,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/home_screen');
+    Navigator.of(context).pushReplacementNamed('/landing_screen');
   }
 }

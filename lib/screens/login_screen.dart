@@ -12,8 +12,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    Utils.setScreenSizes(context);
-
     final _width = Utils.bodyWidth;
     final _height = Utils.totalBodyHeight;
 
@@ -21,7 +19,6 @@ class _LoginScreenState extends State<LoginScreen> {
     TextEditingController _passController = new TextEditingController();
 
     _test() {
-      print("dsadsad");
       print(_passController.text);
     }
 
@@ -49,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: FittedBox(
                           fit: BoxFit.fitWidth,
                           child: Text("Welcome Back!",
-                              style: Theme.of(context).textTheme.title)),
+                              style: Theme.of(context).textTheme.body1)),
                     ),
                   ),
                   Container(
@@ -60,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: FittedBox(
                           fit: BoxFit.fitWidth,
                           child: Text("Sign in To Continue",
-                              style: Theme.of(context).textTheme.title)),
+                              style: Theme.of(context).textTheme.body1)),
                     ),
                   ),
                   Container(
@@ -90,11 +87,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         right: Utils.getDesignWidth(26)),
                     child: FittedBox(
                         fit: BoxFit.fitWidth,
-                        child: Text("Forgot Password",
-                            style: Theme.of(context)
-                                .textTheme
-                                .body1
-                                .copyWith(fontSize: _width * 0.035))),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context)
+                                .pushReplacementNamed('/forgot_password_screen');
+                          },
+                          child: Text("Forgot Password",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .body1
+                                  .copyWith(fontSize: _width * 0.035)),
+                        )),
                   ),
                   Container(
                     width: _width,

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/screens/forgot_password_screen.dart';
 import 'package:foodpal/screens/home_screen.dart';
+import 'package:foodpal/screens/landing_screeen.dart';
 import 'package:foodpal/screens/login_screen.dart';
+import 'package:foodpal/screens/sign_up_otp_screen.dart';
+import 'package:foodpal/screens/sign_up_screen.dart';
 import 'package:foodpal/screens/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -27,13 +31,21 @@ class MyApp extends StatelessWidget {
                 color: Color(0xFF69708A),
                 fontWeight: FontWeight.w500,
                 fontSize: 12.0),
+            button: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.normal,
+                fontSize: 18.0),
           ),
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
         '/home_screen':(context) => HomeScreen(),
-        '/login':(context) => LoginScreen(),
+        '/landing_screen': (context) => LandingScreen(),
+        '/login_screen':(context) => LoginScreen(),
+        '/sign_up_screen':(context) => SignUpScreen(),
+        '/sign_up_otp_screen':(context) => SignUpOtpScreen(),
+        '/forgot_password_screen':(context) => ForgotPasswordScreen(),
       },
     );
   }
