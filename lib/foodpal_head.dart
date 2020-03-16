@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/screens/Food_Details_Screen.dart';
 import 'package:foodpal/screens/home_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen()
+        '/': (context) => FoodDetailsScreen()
       },
     );
   }
