@@ -24,4 +24,5 @@ class CustomIcons {
   static const IconData correct_icon = IconData(0xe801, fontFamily: _kFontFam);
   static const IconData lock = IconData(0xe802, fontFamily: _kFontFam);
   static const IconData mail_icon = IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData mobile_icon = IconData(0xe804, fontFamily: _kFontFam);
 }
