@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FoodPal',
       theme: ThemeData(
+          accentColor: Color(0xFF6EA809),
           primaryColor: Color(0xFF6EA809),
           highlightColor: Color(0xFF69708A),
           backgroundColor: Color(0xFFF5F5F7),
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
             title: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w800,
                 fontSize: 38.0),
             body1: TextStyle(color: Colors.white, fontSize: 18.0),
             body2: TextStyle(
