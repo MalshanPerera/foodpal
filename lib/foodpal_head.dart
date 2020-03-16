@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xFFF5F5F7),
           hintColor: Color(0xFFE7EAF0),
           fontFamily: "NeusaNextStd",
+
           textTheme: TextTheme(
             title: TextStyle(
                 color: Colors.white,
