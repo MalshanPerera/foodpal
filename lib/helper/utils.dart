@@ -26,4 +26,13 @@ class Utils {
 
   }
 
+  static getDesignWidth(designMargin){
+    return (designMargin / 812) * bodyWidth;
+  }
+
+  static getDesignHeight(designMargin){
+    return (designMargin / 812) * totalBodyHeight;
+  }
+
+
 }
