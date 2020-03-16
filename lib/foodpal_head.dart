@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodpal/screens/home_screen.dart';
+import 'package:foodpal/screens/login_screen.dart';
 import 'package:foodpal/screens/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreen(),
         '/home_screen':(context) => HomeScreen(),
+        '/login':(context) => LoginScreen(),
       },
     );
   }
