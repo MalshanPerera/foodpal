@@ -12,8 +12,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    Utils.setScreenSizes(context);
-
     final _width = Utils.bodyWidth;
     final _height = Utils.totalBodyHeight;
 

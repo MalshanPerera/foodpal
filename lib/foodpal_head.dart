@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodpal/screens/home_screen.dart';
 import 'package:foodpal/screens/login_screen.dart';
+import 'package:foodpal/screens/sign_up_screen.dart';
 import 'package:foodpal/screens/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xFFF5F5F7),
           hintColor: Color(0xFFE7EAF0),
           fontFamily: "NeusaNextStd",
+
           textTheme: TextTheme(
             title: TextStyle(
                 color: Colors.white,
@@ -32,7 +34,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreen(),
         '/home_screen':(context) => HomeScreen(),
-        '/login':(context) => LoginScreen(),
+        '/login_screen':(context) => LoginScreen(),
+        '/sign_up_screen':(context) => SignUpScreen(),
       },
     );
   }
