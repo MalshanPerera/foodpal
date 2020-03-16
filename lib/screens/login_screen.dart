@@ -64,10 +64,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       right: Utils.getDesignWidth(23)),
                   child: CustomTextField("Password", Icons.lock)),
               Container(
-                margin: EdgeInsets.only(left: Utils.getDesignWidth(255),right: Utils.getDesignWidth(26)),
+                alignment: Alignment.centerRight,
+                margin: EdgeInsets.only(right: Utils.getDesignWidth(26)),
                 child: FittedBox(
-                    fit:  BoxFit.contain,
-                    child: Text("Forgot Passowrd",style: Theme.of(context).textTheme.title)),
+                    fit:  BoxFit.fitWidth,
+                    child: Text("Forgot Password",style: Theme.of(context).textTheme.body1.copyWith(fontSize: 12))),
               )
             ],
           ),
