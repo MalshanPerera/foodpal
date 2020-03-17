@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
 import 'package:foodpal/presentation/custom_icons_icons.dart';
+import 'package:foodpal/route_constants.dart';
 import 'package:foodpal/widgets/CustomTextField.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,8 +19,11 @@ class _LoginScreenState extends State<LoginScreen> {
     TextEditingController _usernameController = new TextEditingController();
     TextEditingController _passController = new TextEditingController();
 
-    _test() {
-      print(_passController.text);
+    validate() {
+      if (_usernameController.text.length != 0 &&
+          _passController.text.length != 0) {
+        print("login");
+      }
     }
 
     return Scaffold(
@@ -78,6 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: CustomTextField(
                         controller: _passController,
                         inputFieldName: "Password",
+                        isPassword: true,
                         icon: CustomIcons.lock,
                       )),
                   Container(
@@ -90,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context)
-                                .pushReplacementNamed('/forgot_password_screen');
+                                .pushNamed(ForgotPasswordEmailScreenRoute);
                           },
                           child: Text("Forgot Password",
                               style: Theme.of(context)
@@ -119,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               .copyWith(fontSize: _width * 0.038),
                         ),
                         onPressed: (() {
-                          _test();
+                          validate();
                         })),
                   ),
                   Container(
@@ -133,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               recognizer: new TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.of(context)
-                                      .pushReplacementNamed('/sign_up_screen');
+                                      .pushNamed(SignUpScreenRoute);
                                 },
                               text: 'Sign up',
                               style: Theme.of(context).textTheme.body1.copyWith(

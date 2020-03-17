@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
+import 'package:foodpal/route_constants.dart';
 import 'package:page_view_indicator/page_view_indicator.dart';
 
 class LandingScreen extends StatelessWidget {
-
   final _width = Utils.bodyWidth;
   final _height = Utils.totalBodyHeight;
 
@@ -14,7 +14,8 @@ class LandingScreen extends StatelessWidget {
     {
       "imageURL": 'assets/images/landing_page_image_one.png',
       "textOne": 'Lots of Recipes!',
-      "textTwo": 'Discover over 350,000 recipes with over 78 cuisines from around the globe',
+      "textTwo":
+          'Discover over 350,000 recipes with over 78 cuisines from around the globe',
       "buttonVisibility": false
     },
     {
@@ -26,7 +27,8 @@ class LandingScreen extends StatelessWidget {
     {
       "imageURL": 'assets/images/landing_page_image_three.png',
       "textOne": 'Fitness Is Life!',
-      "textTwo": 'Customize your Recipes given to you according to your Meal Plan or Diet',
+      "textTwo":
+          'Customize your Recipes given to you according to your Meal Plan or Diet',
       "buttonVisibility": true
     },
   ];
@@ -88,9 +90,15 @@ class LandingScreen extends StatelessWidget {
     );
   }
 
-  Widget _pageViewScreen({String imageURL, String textOne, String textTwo, bool buttonVisibility, BuildContext context}){
+  Widget _pageViewScreen(
+      {String imageURL,
+      String textOne,
+      String textTwo,
+      bool buttonVisibility,
+      BuildContext context}) {
     return Container(
-      margin: EdgeInsets.only(top: _height * 0.152, left: _width * 0.069, right: _width * 0.069),
+      margin: EdgeInsets.only(
+          top: _height * 0.152, left: _width * 0.069, right: _width * 0.069),
       child: Column(
         children: <Widget>[
           Container(
@@ -102,21 +110,23 @@ class LandingScreen extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(top: _height * 0.1),
-            child: Text(textOne,
+            child: Text(
+              textOne,
               style: Theme.of(context).textTheme.title.copyWith(
-                  fontSize: 26.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-              ),
+                    fontSize: 26.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                  ),
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: _height * 0.03),
-            child: Text(textTwo,
+            child: Text(
+              textTwo,
               style: Theme.of(context).textTheme.body1.copyWith(
-                  fontSize: 16.0,
-                  color: Colors.black,
-              ),
+                    fontSize: 16.0,
+                    color: Colors.black,
+                  ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -128,13 +138,15 @@ class LandingScreen extends StatelessWidget {
               margin: EdgeInsets.only(top: _height * 0.1),
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(7.0),
+                  borderRadius: BorderRadius.circular(7.0),
                 ),
                 color: Theme.of(context).accentColor,
                 elevation: 0.5,
-                child: Text("Let's Go!",
-                    style: Theme.of(context).textTheme.button,),
-                onPressed: () => Navigator.pushNamed(context, '/login_screen'),
+                child: Text(
+                  "Let's Go!",
+                  style: Theme.of(context).textTheme.button,
+                ),
+                onPressed: () => Navigator.pushNamed(context, LoginScreenRoute),
               ),
             ),
           ),

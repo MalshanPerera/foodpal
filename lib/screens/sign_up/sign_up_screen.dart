@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
 import 'package:foodpal/presentation/custom_icons_icons.dart';
+import 'package:foodpal/route_constants.dart';
 import 'package:foodpal/widgets/customTextField.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -44,7 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: Utils.getDesignHeight(21),
                       child: FittedBox(
                           fit: BoxFit.fitWidth,
-                            child: Text(
+                          child: Text(
                               "Please fill the details below to create a ",
                               style: Theme.of(context).textTheme.body1)),
                     ),
@@ -99,7 +100,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           left: Utils.getDesignWidth(30),
                           right: Utils.getDesignWidth(30)),
                       child: CustomTextField(
-                          inputFieldName: "Password", icon: CustomIcons.lock)),
+                        inputFieldName: "Password",
+                        icon: CustomIcons.lock,
+                        isPassword: true,
+                      )),
                   Container(
                       margin: EdgeInsets.only(
                           top: Utils.getDesignHeight(20),
@@ -107,7 +111,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           right: Utils.getDesignWidth(30)),
                       child: CustomTextField(
                           inputFieldName: "Confirm Password",
-                          icon: CustomIcons.lock)),
+                          icon: CustomIcons.lock,
+                          isPassword: true)),
                   Container(
                     height: Utils.getDesignHeight(48),
                     width: _width,
@@ -127,8 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               .copyWith(fontSize: _width * 0.038),
                         ),
                         onPressed: (() {
-                          Navigator.of(context)
-                              .pushReplacementNamed('/sign_up_otp_screen');
+                          Navigator.of(context).pushNamed(SignUpOTPScreenRoute);
                         })),
                   )
                 ],
