@@ -13,6 +13,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final _width = Utils.bodyWidth;
   final _height = Utils.totalBodyHeight;
 
+  int _currentPageIndex = 0;
+
   PageController _controller = PageController(
     initialPage: 0,
   );
@@ -103,27 +105,60 @@ class _HomeScreenState extends State<HomeScreen> {
                     height:  _height * 0.05,
                     child: Row(
                       children: <Widget>[
-                        Container(
-                          width: _width * 0.285,
-                          child: Text("For You", style: Theme.of(context).textTheme.body2, textAlign: TextAlign.center,),
+                        InkWell(
+                          child: Container(
+                            width: _width * 0.285,
+                            child: Text("For You",
+                              style: _currentPageIndex == 0 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          onTap: () {
+                            setState(() {
+                              _controller.animateToPage(0, duration: Duration(milliseconds: 300), curve: Curves.easeIn,);
+                              _currentPageIndex = 0;
+                            });
+                          },
                         ),
                         Container(
                           margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
                           color: Theme.of(context).highlightColor,
                           width: 1,
                         ),
-                        Container(
-                          width: _width * 0.285,
-                          child: Text("Most Popular", style: Theme.of(context).textTheme.body2, textAlign: TextAlign.center,),
+                        InkWell(
+                          child: Container(
+                            width: _width * 0.285,
+                            child: Text("Most Popular",
+                              style: _currentPageIndex == 1 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          onTap: () {
+                            setState(() {
+                              _controller.animateToPage(1, duration: Duration(milliseconds: 300), curve: Curves.easeIn,);
+                              _currentPageIndex = 1;
+                            });
+                          },
                         ),
                         Container(
                           margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
                           color: Theme.of(context).highlightColor,
                           width: 1,
                         ),
-                        Container(
-                          width: _width * 0.285,
-                          child: Text("Ingredinets", style: Theme.of(context).textTheme.body2, textAlign: TextAlign.center,),
+                        InkWell(
+                          child: Container(
+                            width: _width * 0.285,
+                            child: Text("Ingredinets",
+                              style: _currentPageIndex == 2 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          onTap: () {
+                            setState(() {
+                              _controller.animateToPage(2, duration: Duration(milliseconds: 300), curve: Curves.easeIn,);
+                              _currentPageIndex = 2;
+                            });
+                          },
                         ),
                       ],
                     ),
@@ -142,9 +177,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   _mostPopular(),
                   _ingredientsTab(),
                 ],
-                onPageChanged:(index) {
+                onPageChanged: (index){
                   setState(() {
-
+                    _currentPageIndex = index;
                   });
                 },
               ),
