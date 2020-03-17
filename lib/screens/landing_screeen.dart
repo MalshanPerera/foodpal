@@ -125,7 +125,7 @@ class LandingScreen extends StatelessWidget {
             child: Container(
               width: _width,
               height: _height * 0.06,
-              margin: EdgeInsets.only(top: _height * 0.2),
+              margin: EdgeInsets.only(top: _height * 0.1),
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(7.0),
@@ -134,7 +134,7 @@ class LandingScreen extends StatelessWidget {
                 elevation: 0.5,
                 child: Text("Let's Go!",
                     style: Theme.of(context).textTheme.button,),
-                onPressed: () => Navigator.pushNamed(context, '/home_screen'),
+                onPressed: () => Navigator.pushNamed(context, '/login_screen'),
               ),
             ),
           ),
