@@ -6,7 +6,7 @@ class CustomTextField extends StatefulWidget {
     Key key,
     @required this.inputFieldName,
     @required this.icon,
-    @required this.controller,
+    this.controller,
     this.isPassword = false,
   }) : super(key: key);
 
