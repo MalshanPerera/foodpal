@@ -637,7 +637,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      margin: EdgeInsets.only(left: 1.0, right: _width * 0.018),
+      margin: EdgeInsets.only(left: 1.0, right: _width * 0.018, bottom: _height * 0.01),
       width: _width * 0.48,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
