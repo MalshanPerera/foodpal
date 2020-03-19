@@ -275,7 +275,7 @@ class FavoiuritesScreen extends StatelessWidget {
 
             Container(
               margin: EdgeInsets.only(
-                  top:  Utils.getDesignHeight(145),
+                  top:  Utils.getDesignHeight(137),
                   left: _width * 0.018,
                   right: _width * 0.018),
               child: Row(

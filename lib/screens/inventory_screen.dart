@@ -11,6 +11,22 @@ class _InventoryScreenState extends State<InventoryScreen> {
   final _width = Utils.bodyWidth;
   final _height = Utils.totalBodyHeight;
 
+  List<Map<String, String>> _frequentIngredientsList = [
+    {"imagePath": "assets/images/ingredients1.jpg", "name": "Strawberries"},
+    {"imagePath": "assets/images/ingredients2.jpg", "name": "Mandarins"},
+    {"imagePath": "assets/images/ingredients3.jpg", "name": "Spinach"},
+    {"imagePath": "assets/images/ingredients4.jpg", "name": "BeetRoot"},
+    {"imagePath": "assets/images/ingredients5.jpg", "name": "Cucumber"}
+  ];
+
+  List<Map<String,String>> _fruitIngredients = [
+    {
+      "":"",
+
+    }
+  ];
+
+
   int _currentPageIndex = 0;
 
   PageController _controller = PageController(
@@ -26,6 +42,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
         body: Column(children: <Widget>[
       Stack(children: <Widget>[
         Column(
@@ -97,7 +114,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
                 decoration: BoxDecoration(
                     color: _currentPageIndex == 0
                         ? Theme.of(context).primaryColor
-                        : Theme.of(context).backgroundColor,
+                        : Colors.white,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(6.0),
                         bottomLeft: Radius.circular(6.0))),
@@ -110,7 +127,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
                       ? Theme.of(context)
                           .textTheme
                           .body2
-                          .copyWith(color: Theme.of(context).backgroundColor)
+                          .copyWith(color:Colors.white)
                       : Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
@@ -139,14 +156,14 @@ class _InventoryScreenState extends State<InventoryScreen> {
                 alignment: Alignment.center,
                 color: _currentPageIndex == 1
                     ? Theme.of(context).primaryColor
-                    : Theme.of(context).backgroundColor,
+                    : Colors.white,
                 child: Text(
                   "Meat",
                   style: _currentPageIndex == 1
                       ? Theme.of(context)
                           .textTheme
                           .body2
-                          .copyWith(color: Theme.of(context).backgroundColor)
+                          .copyWith(color: Colors.white)
                       : Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
@@ -175,14 +192,14 @@ class _InventoryScreenState extends State<InventoryScreen> {
                 alignment: Alignment.center,
                 color: _currentPageIndex == 2
                     ? Theme.of(context).primaryColor
-                    : Theme.of(context).backgroundColor,
+                    : Colors.white,
                 child: Text(
                   "Dairy",
                   style: _currentPageIndex == 2
                       ? Theme.of(context)
                           .textTheme
                           .body2
-                          .copyWith(color: Theme.of(context).backgroundColor)
+                          .copyWith(color: Colors.white)
                       : Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
@@ -212,7 +229,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
                       bottomRight: Radius.circular(6.0)),
                   color: _currentPageIndex == 3
                       ? Theme.of(context).primaryColor
-                      : Theme.of(context).backgroundColor,
+                      : Colors.white,
                 ),
                 height: Utils.getDesignHeight(32),
                 width: Utils.getDesignWidth(77),
@@ -223,7 +240,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
                       ? Theme.of(context)
                           .textTheme
                           .body2
-                          .copyWith(color: Theme.of(context).backgroundColor)
+                          .copyWith(color: Colors.white)
                       : Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
@@ -244,7 +261,6 @@ class _InventoryScreenState extends State<InventoryScreen> {
       ),
       Expanded(
         child: Container(
-          margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
           color: Theme.of(context).backgroundColor,
           height: _height,
           child: PageView(
@@ -272,9 +288,9 @@ class _InventoryScreenState extends State<InventoryScreen> {
       separatorBuilder: (context, index) => Divider(
         color: Colors.grey,
       ),
-      itemCount: 20,
+      itemCount: 10,
       itemBuilder: (context, index) => Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.only(bottom: Utils.getDesignHeight(25), top: Utils.getDesignHeight(25)),
         child: ingredientCard(),
       ),
     );
@@ -282,11 +298,10 @@ class _InventoryScreenState extends State<InventoryScreen> {
 
   Widget ingredientCard() {
     return Container(
-      height: Utils.getDesignHeight(136),
-      width: Utils.getDesignWidth(321),
-      padding: EdgeInsets.only(left: _width * 0.069),
+      margin: EdgeInsets.only(left: _width * 0.069 , right: _width*0.069),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
@@ -315,17 +330,15 @@ class _InventoryScreenState extends State<InventoryScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(top: Utils.getDesignHeight(10)),
                   child: AutoSizeText(
                     'Green Grapes',
-                    style: Theme.of(context).textTheme.body2,
+                    style: Theme.of(context).textTheme.body2.copyWith(fontSize: 14 , fontWeight: FontWeight.w700),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: Utils.getDesignHeight(5)),
                   child: AutoSizeText(
                     '500g',
-                    style: Theme.of(context).textTheme.body2,
+                    style: Theme.of(context).textTheme.body2.copyWith(color: Color(0xffFF5353), fontSize: 14 , fontWeight: FontWeight.w700),
                   ),
                 ),
                 Container(
@@ -335,17 +348,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
                     style: Theme.of(context)
                         .textTheme
                         .body2
-                        .copyWith(color: Theme.of(context).primaryColor),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: Utils.getDesignHeight(10)),
-                  child: AutoSizeText(
-                    '-100g',
-                    style: Theme.of(context)
-                        .textTheme
-                        .body2
-                        .copyWith(color: Colors.red),
+                        .copyWith(color: Theme.of(context).primaryColor , fontSize: 14 , fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
@@ -355,13 +358,14 @@ class _InventoryScreenState extends State<InventoryScreen> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Container(
-                  width: Utils.getDesignWidth(20),
-                  margin: EdgeInsets.only(
-                      top: Utils.getDesignHeight(15),
-                      left: Utils.getDesignWidth(104)),
-                  child: Image.asset('assets/images/like.png')),
+                child: Icon(
+                  Icons.favorite_border,
+                  color: Theme.of(context).accentColor,
+                  size: 20,
+                ),
+              ),
               Container(
-                  margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(15), left: Utils.getDesignWidth(55)),
                   child: Row(
                     children: <Widget>[
                       Container(
@@ -395,32 +399,77 @@ class _InventoryScreenState extends State<InventoryScreen> {
         padding: EdgeInsets.only(right: _width * 0.069),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return _ingredientListTile();
+          return _frequentlyInv(
+              _frequentIngredientsList[index]["imagePath"],
+              _frequentIngredientsList[index]["name"],
+              context);
         },
       ),
     );
   }
 
-  Widget _ingredientListTile() {
+  Widget _frequentlyInv(String imagePath, String name, BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          color: Colors.yellowAccent,
-          borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
-              image: AssetImage('assets/images/grapes.png'),
-              fit: BoxFit.cover)),
-      height: Utils.getDesignHeight(151),
-      width: Utils.getDesignWidth(131),
       margin: EdgeInsets.only(right: Utils.getDesignWidth(12)),
-      child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-              margin: EdgeInsets.only(bottom: Utils.getDesignHeight(15)),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).hintColor,
+            blurRadius: 1.0,
+            offset: Offset(
+              0.0, // horizontal, move right 10
+              1.0, // vertical, move down 10
+            ),
+          )
+        ],
+      ),
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: <Widget>[
+          Container(
+            height: Utils.getDesignHeight(151),
+            width: Utils.getDesignWidth(131),
+            foregroundDecoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+                image: DecorationImage(
+                    image: AssetImage(
+                      imagePath,
+                    ),
+                    fit: BoxFit.fill)),
+          ),
+          Container(
+            height: 0.186 * _height,
+            width: 0.349 * _width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              color: Colors.white,
+              gradient: LinearGradient(
+                begin: FractionalOffset.topCenter,
+                end: FractionalOffset.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.black.withOpacity(0.3),
+                ],
+                stops: [0.0, 1.0],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: Utils.getDesignHeight(16),
+            child: Align(
+              alignment: Alignment.bottomCenter,
               child: AutoSizeText(
-                "Green Grapes",
+                name,
                 minFontSize: 14,
                 maxFontSize: 16,
-              ))),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
+
 }

@@ -119,7 +119,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 Container(
                   width: _width,
                   height: _height * 0.22,
-                  child: Image.asset('assets/images/home_background_image.png', fit: BoxFit.fill,),
+                  child: Image.asset('assets/images/nachos.png', fit: BoxFit.fill,),
                 ),
                 //Container of Food Name Text and FloatingActionButton
                 Container(
