@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/screens/Food_Details_Screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_email_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_otp_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_screen.dart';
@@ -48,11 +49,11 @@ class MyApp extends StatelessWidget {
         LoginScreenRoute: (context) => LoginScreen(),
         SignUpScreenRoute: (context) => SignUpScreen(),
         SignUpOTPScreenRoute: (context) => SignUpOtpScreen(),
-        ForgotPasswordEmailScreenRoute: (context) =>
-            ForgotPasswordEmailScreen(),
+        ForgotPasswordEmailScreenRoute: (context) => ForgotPasswordEmailScreen(),
         ForgotPasswordOTPScreenRoute: (context) => ForgotPasswordOTPScreen(),
         ForgotPasswordScreenRoute: (context) => ForgotPasswordScreen(),
         InventoryScreenRoute: (context) => InventoryScreen(),
+        FoodDetailsScreenRoute: (context) => FoodDetailsScreen(),
       },
     );
   }

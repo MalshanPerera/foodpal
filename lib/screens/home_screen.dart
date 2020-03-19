@@ -15,6 +15,168 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentPageIndex = 0;
 
+  List<Map<String, dynamic>> _ingredientsList = [
+    {
+      "ingredient": "Chicken",
+      "details": [
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Nuggets with Mexican Tacos",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 45 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Wings with Red Hot Sauce",
+          "cal": "1235 Kcal (500g)",
+          "time": "20 mins - 30 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+      ]
+    },
+    {
+      "ingredient": "Cheese",
+      "details": [
+        {
+          "imageURL": "assets/images/foodImageOne.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "20 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageOne.png",
+          "name": "Chicken Nuggets with Mexican Tacos",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageOne.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "40 mins - 45 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageOne.png",
+          "name": "Chicken Wings with Red Hot Sauce",
+          "cal": "1235 Kcal (500g)",
+          "time": "20 mins - 30 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageOne.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+      ]
+    },
+    {
+      "ingredient": "Breed",
+      "details": [
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Nuggets with Mexican Tacos",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 45 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Wings with Red Hot Sauce",
+          "cal": "1235 Kcal (500g)",
+          "time": "20 mins - 30 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+      ]
+    },
+    {
+      "ingredient": "Bacon",
+      "details": [
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Nuggets with Mexican Tacos",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 45 mins"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Wings with Red Hot Sauce",
+          "cal": "1235 Kcal (500g)",
+          "time": "20 mins - 30 mins"
+        },
+      ]
+    },
+    {
+      "ingredient": "Milk",
+      "details": [
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "45 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Chicken Nuggets with Mexican Tacos",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 1 hour"
+        },
+        {
+          "imageURL": "assets/images/foodImageTwo.png",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 45 mins"
+        },
+      ]
+    },
+  ];
+
+  int _currentIngredientIndex = 0;
+
   PageController _controller = PageController(
     initialPage: 0,
   );
@@ -28,6 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -115,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           onTap: () {
                             setState(() {
-                              _controller.animateToPage(0, duration: Duration(milliseconds: 300), curve: Curves.easeIn,);
+                              _controller.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
                               _currentPageIndex = 0;
                             });
                           },
@@ -123,7 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
                           color: Theme.of(context).highlightColor,
-                          width: 1,
+                          width: 0.5,
                         ),
                         InkWell(
                           child: Container(
@@ -135,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           onTap: () {
                             setState(() {
-                              _controller.animateToPage(1, duration: Duration(milliseconds: 300), curve: Curves.easeIn,);
+                              _controller.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
                               _currentPageIndex = 1;
                             });
                           },
@@ -143,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
                           color: Theme.of(context).highlightColor,
-                          width: 1,
+                          width: 0.5,
                         ),
                         InkWell(
                           child: Container(
@@ -155,7 +318,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           onTap: () {
                             setState(() {
-                              _controller.animateToPage(2, duration: Duration(milliseconds: 300), curve: Curves.easeIn,);
+                              _controller.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
                               _currentPageIndex = 2;
                             });
                           },
@@ -167,22 +330,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             Container(
+              margin: EdgeInsets.only(bottom: _height * 0.05),
               color: Theme.of(context).backgroundColor,
               height: _height,
               child: PageView(
-                controller: _controller,
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  _forYouTab(),
-                  _mostPopular(),
-                  _ingredientsTab(),
-                ],
-                onPageChanged: (index){
-                  setState(() {
-                    _currentPageIndex = index;
-                  });
-                },
-              ),
+              controller: _controller,
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                _forYouTab(),
+                _mostPopular(),
+                _ingredientsTab(),
+              ],
+              onPageChanged: (index){
+                setState(() {
+                  _currentPageIndex = index;
+                });
+              },
+            ),
             ),
           ],
         ),
@@ -263,7 +427,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: 5,
+        itemCount: 10,
         itemBuilder: (BuildContext context, int index) {
           return _mostPopularListTile();
         },
@@ -272,15 +436,62 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _ingredientsTab(){
-    return Container(
-      child: ListView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return _ingredientListTile();
-        },
-      ),
+    return Column(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.only(top: _height * 0.015, left: _width * 0.069, right: _width * 0.069,),
+          height: _height * 0.04,
+          width: _width,
+          child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: _ingredientsList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: _currentIngredientIndex == index ? Theme.of(context).accentColor : Theme.of(context).backgroundColor,
+                    borderRadius: BorderRadius.all(Radius.circular(6.0),
+                    ),
+                  ),
+                  height: _height * 0.04,
+                  width: _width * 0.188,
+                  child: Center(
+                      child: Text(
+                        _ingredientsList[index]["ingredient"],
+                        style: Theme.of(context).textTheme.body2.copyWith(
+                          fontSize: 15.0,
+                          color: _currentIngredientIndex == index ? Colors.white : Theme.of(context).highlightColor
+                        ),
+                      ),
+                  ),
+                ),
+                onTap: () {
+                  setState(() {
+                    _currentIngredientIndex = index;
+                  });
+                },
+              );
+            },
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.only(top: _height * 0.03),
+            itemCount: _ingredientsList[_currentIngredientIndex]["details"].length,
+            itemBuilder: (BuildContext context, int index) {
+              return _ingredientListTile(
+                imagePath: _ingredientsList[_currentIngredientIndex]["details"][index]["imageURL"],
+                foodName: _ingredientsList[_currentIngredientIndex]["details"][index]["name"],
+                calories: _ingredientsList[_currentIngredientIndex]["details"][index]["cal"],
+                time: _ingredientsList[_currentIngredientIndex]["details"][index]["time"],
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
@@ -465,7 +676,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _ingredientListTile(){
+  Widget _ingredientListTile({String imagePath, String foodName, String calories, String time}){
     return Container(
       margin: EdgeInsets.only(left: _width * 0.069, right: _width * 0.069, bottom: 10.0),
       height: _height * 0.146,
@@ -490,7 +701,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: CircleAvatar(
               backgroundColor: Colors.green,
                radius: _width * 0.116,
-              backgroundImage: AssetImage('assets/images/foodImageTwo.png'),
+              backgroundImage: AssetImage(imagePath),
             ),
           ),
           Container(
@@ -505,7 +716,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Container(
                         width: _width * 0.33,
-                        child: Text("Roasted Chicken with Parmasean Cheese", style: Theme.of(context).textTheme.body2,),
+                        child: Text(foodName, style: Theme.of(context).textTheme.body2,),
                       ),
                       Container(
                         child: Icon(Icons.favorite_border, color: Theme.of(context).accentColor, size: 20,),
@@ -539,14 +750,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: _height * 0.005),
-                  child: Text("1235 Kcal (500g)",
+                  child: Text(calories,
                     style: Theme.of(context).textTheme.body2,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: _height * 0.013),
                   alignment: Alignment.centerRight,
-                  child: Text("45 mins - 1 hour",
+                  child: Text(time,
                     style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0, color: Theme.of(context).accentColor),
                   ),
                 ),
