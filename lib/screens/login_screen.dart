@@ -23,6 +23,9 @@ class _LoginScreenState extends State<LoginScreen> {
       if (_usernameController.text.length != 0 &&
           _passController.text.length != 0) {
         Navigator.of(context).pushReplacementNamed(FavouritesScreenRoute);
+
+        Navigator.of(context).pushReplacementNamed(InventoryScreenRoute);
+
       }
     }
 

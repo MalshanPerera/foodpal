@@ -8,3 +8,4 @@ const String FavouritesScreenRoute = '/favourites_screen';
 const String ForgotPasswordEmailScreenRoute = '/forgot_password_email_screen';
 const String ForgotPasswordOTPScreenRoute = '/forgot_password_otp_screen';
 const String ForgotPasswordScreenRoute = '/forgot_password_screen';
+const String InventoryScreenRoute = '/inventory_screen';
