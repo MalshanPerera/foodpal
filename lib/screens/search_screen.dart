@@ -94,6 +94,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   Widget searchTile() {
     return Container(
+      margin: EdgeInsets.only(top: Utils.getDesignHeight(20)),
       height: Utils.getDesignHeight(210),
       width: Utils.getDesignWidth(154),
       decoration: BoxDecoration(
