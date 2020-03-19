@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                 fontSize: 12.0),
           ),
       ),
-      initialRoute: '/food_detials_screen',
+      initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
         '/home_screen':(context) => HomeScreen(),
