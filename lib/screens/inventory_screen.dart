@@ -279,10 +279,22 @@ class _InventoryScreenState extends State<InventoryScreen> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Material(
-            elevation: 11.0,
-            shape: CircleBorder(),
-            clipBehavior: Clip.antiAlias,
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Theme.of(context).hintColor,
+                  blurRadius: 10.0,
+                  spreadRadius: 3.0,
+                  offset: Offset(
+                    0.0, // horizontal, move right 10
+                    5.0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
             child: CircleAvatar(
                 radius: Utils.getDesignWidth(49.5),
                 backgroundColor: Theme.of(context).backgroundColor,
