@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
+import 'package:foodpal/route_constants.dart';
 import 'package:foodpal/widgets/circle_container.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -281,6 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     ),
                     child: TextField(
+
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                           border: InputBorder.none,
@@ -288,7 +290,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           prefixIcon: Icon(Icons.search),
                           hintText: "Search here...",
                           hintStyle: Theme.of(context).textTheme.body2
-                      ),
+                      ),onSubmitted:(val){
+                        Navigator.of(context).pushNamed(SearchScreenRoute);
+                    },
                     ),
                   ),
                 ),

@@ -25,4 +25,6 @@ class CustomIcons {
   static const IconData lock = IconData(0xe802, fontFamily: _kFontFam);
   static const IconData mail_icon = IconData(0xe803, fontFamily: _kFontFam);
   static const IconData mobile_icon = IconData(0xe804, fontFamily: _kFontFam);
+  static const IconData home = IconData(0xe805, fontFamily: _kFontFam);
+  static const IconData inventory = IconData(0xe806, fontFamily: _kFontFam);
 }

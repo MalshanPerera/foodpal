@@ -10,3 +10,4 @@ const String ForgotPasswordOTPScreenRoute = '/forgot_password_otp_screen';
 const String ForgotPasswordScreenRoute = '/forgot_password_screen';
 const String InventoryScreenRoute = '/inventory_screen';
 const String FoodDetailsScreenRoute = '/food_details_screen';
+const String SearchScreenRoute = '/search_screen';
