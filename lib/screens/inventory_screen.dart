@@ -97,11 +97,12 @@ class _InventoryScreenState extends State<InventoryScreen> {
               child: Container(
                 height: Utils.getDesignHeight(32),
                 width: Utils.getDesignWidth(77),
+                alignment: Alignment.center,
                 color: _currentPageIndex == 0
                     ? Theme.of(context).primaryColor
                     : Theme.of(context).backgroundColor,
                 child: Text(
-                  "For You",
+                  "Fruits",
                   style: _currentPageIndex == 0
                       ? Theme.of(context)
                           .textTheme
@@ -130,14 +131,19 @@ class _InventoryScreenState extends State<InventoryScreen> {
             ),
             InkWell(
               child: Container(
-                width: _width * 0.285,
+                height: Utils.getDesignHeight(32),
+                width: Utils.getDesignWidth(77),
+                alignment: Alignment.center,
+                color: _currentPageIndex == 1
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).backgroundColor,
                 child: Text(
-                  "Most Popular",
+                  "Meat",
                   style: _currentPageIndex == 1
                       ? Theme.of(context)
                           .textTheme
                           .body2
-                          .copyWith(color: Theme.of(context).accentColor)
+                          .copyWith(color: Theme.of(context).backgroundColor)
                       : Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
@@ -161,14 +167,19 @@ class _InventoryScreenState extends State<InventoryScreen> {
             ),
             InkWell(
               child: Container(
-                width: _width * 0.285,
+                height: Utils.getDesignHeight(32),
+                width: Utils.getDesignWidth(77),
+                alignment: Alignment.center,
+                color: _currentPageIndex == 2
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).backgroundColor,
                 child: Text(
-                  "Ingredinets",
+                  "Dairy",
                   style: _currentPageIndex == 2
                       ? Theme.of(context)
                           .textTheme
                           .body2
-                          .copyWith(color: Theme.of(context).accentColor)
+                          .copyWith(color: Theme.of(context).backgroundColor)
                       : Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
@@ -184,10 +195,171 @@ class _InventoryScreenState extends State<InventoryScreen> {
                 });
               },
             ),
+            Container(
+              margin: EdgeInsets.only(
+                  top: _height * 0.007, bottom: _height * 0.007),
+              color: Theme.of(context).highlightColor,
+              width: 1,
+            ),
+            InkWell(
+              child: Container(
+                height: Utils.getDesignHeight(32),
+                width: Utils.getDesignWidth(77),
+                alignment: Alignment.center,
+                color: _currentPageIndex == 3
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).backgroundColor,
+                child: Text(
+                  "Vegetables",
+                  style: _currentPageIndex == 3
+                      ? Theme.of(context)
+                          .textTheme
+                          .body2
+                          .copyWith(color: Theme.of(context).backgroundColor)
+                      : Theme.of(context).textTheme.body2,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              onTap: () {
+                setState(() {
+                  _controller.animateToPage(
+                    3,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeIn,
+                  );
+                  _currentPageIndex = 3;
+                });
+              },
+            ),
           ],
         ),
       ),
+      Container(
+        margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
+        color: Theme.of(context).backgroundColor,
+        height: _height,
+        child: PageView(
+          controller: _controller,
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            ingredientList(),
+            ingredientList(),
+            ingredientList(),
+            ingredientList(),
+          ],
+          onPageChanged: (index) {
+            setState(() {
+              _currentPageIndex = index;
+            });
+          },
+        ),
+      ),
     ])));
+  }
+  Widget ingredientList(){
+   return  ListView.separated(
+      separatorBuilder: (context, index) => Divider(
+        color: Colors.grey,
+      ),
+      itemCount: 20,
+      itemBuilder: (context, index) => Padding(
+        padding: EdgeInsets.all(8.0),
+        child: ingredientCard(),
+      ),
+    );
+  }
+  Widget ingredientCard() {
+    return Container(
+      height: Utils.getDesignHeight(136),
+      width: Utils.getDesignWidth(321),
+      padding: EdgeInsets.only(left: _width * 0.069),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Material(
+            elevation: 11.0,
+            shape: CircleBorder(),
+            clipBehavior: Clip.antiAlias,
+            child: CircleAvatar(
+                radius: Utils.getDesignWidth(49.5),
+                backgroundColor: Theme.of(context).backgroundColor,
+                child: Image.asset('assets/images/grape-ingrediant.png')),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: Utils.getDesignWidth(19)),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(10)),
+                  child: AutoSizeText(
+                    'Green Grapes',
+                    style: Theme.of(context).textTheme.body2,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(5)),
+                  child: AutoSizeText(
+                    '500g',
+                    style: Theme.of(context).textTheme.body2,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
+                  child: AutoSizeText(
+                    '600 cal(100g)',
+                    style: Theme.of(context)
+                        .textTheme
+                        .body2
+                        .copyWith(color: Theme.of(context).primaryColor),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(10)),
+                  child: AutoSizeText(
+                    '-100g',
+                    style: Theme.of(context)
+                        .textTheme
+                        .body2
+                        .copyWith(color: Colors.red),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              Container(
+                  width: Utils.getDesignWidth(20),
+                  margin: EdgeInsets.only(
+                      top: Utils.getDesignHeight(15),
+                      left: Utils.getDesignWidth(104)),
+                  child: Image.asset('assets/images/like.png')),
+              Container(
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        child: Image.asset('assets/images/minus.png'),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(
+                              left: Utils.getDesignWidth(15),
+                              right: Utils.getDesignWidth(15)),
+                          child: AutoSizeText(
+                            '2',
+                            style: Theme.of(context).textTheme.body2,
+                          )),
+                      Container(
+                        child: Image.asset('assets/images/plus.png'),
+                      ),
+                    ],
+                  ))
+            ],
+          )
+        ],
+      ),
+    );
   }
 
   Widget _frequentList() {
