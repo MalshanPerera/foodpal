@@ -38,6 +38,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed(MainScreenRoute);
+    Navigator.of(context).pushReplacementNamed(AllergiesDietScreenRoute);
   }
 }

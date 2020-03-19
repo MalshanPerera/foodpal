@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodpal/screens/Food_Details_Screen.dart';
+import 'package:foodpal/screens/cuisines_screen.dart';
 import 'package:foodpal/screens/favourites_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_email_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_otp_screen.dart';
@@ -14,6 +15,7 @@ import 'package:foodpal/screens/sign_up/sign_up_otp_screen.dart';
 import 'package:foodpal/screens/sign_up/sign_up_screen.dart';
 import 'package:foodpal/screens/splash_screen.dart';
 import 'package:foodpal/route_constants.dart';
+import 'package:foodpal/screens/allergies_diet_screen.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -59,6 +61,8 @@ class MyApp extends StatelessWidget {
         FoodDetailsScreenRoute: (context) => FoodDetailsScreen(),
         MainScreenRoute: (context) => MainScreen(),
         SearchScreenRoute: (context) => SearchScreen(),
+        AllergiesDietScreenRoute: (context) => AllergiesDietScreen(),
+        CuisinesScreenRoute: (context) => CuisinesScreen(),
       },
     );
   }
