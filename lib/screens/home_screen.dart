@@ -16,27 +16,36 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentPageIndex = 0;
 
   List<Map<String, dynamic>> _topPicksList = [
-    {"imageURL": "assets/images/topPicks1.jpg", "name": "French Toast"},
-    {"imageURL": "assets/images/topPicks2.jpg", "name": "French Toast"},
-    {"imageURL": "assets/images/topPick3.jpg", "name": "French Toast"},
-    {"imageURL": "assets/images/topPicks4.jpg", "name": "French Toast"},
-    {"imageURL": "assets/images/topPicks5.jpg", "name": "French Toast"},
+    {"imageURL": "assets/images/nachos.jpg", "name": "Mexican Nachos"},
+    {
+      "imageURL": "assets/images/topPicks2.jpg",
+      "name": "Pancakes & Blueberries"
+    },
+    {"imageURL": "assets/images/topPick3.jpg", "name": "All in One Fries"},
+    {"imageURL": "assets/images/topPicks4.jpg", "name": "Pasta with Bacon"},
+    {"imageURL": "assets/images/topPicks5.jpg", "name": "Salmon Carbonara"},
   ];
 
   List<Map<String, dynamic>> _yourDietList = [
     {"imageURL": "assets/images/diet1.jpg", "name": "Morning Salad"},
-    {"imageURL": "assets/images/diet2.jpg", "name": "Morning Salad"},
-    {"imageURL": "assets/images/diet3.jpg", "name": "Morning Salad"},
-    {"imageURL": "assets/images/diet4.jpg", "name": "Morning Salad"},
-    {"imageURL": "assets/images/diet5.jpg", "name": "Morning Salad"},
+    {"imageURL": "assets/images/diet2.jpg", "name": "Grain ComboV"},
+    {"imageURL": "assets/images/diet3.jpg", "name": "Workout Platter"},
+    {"imageURL": "assets/images/diet4.jpg", "name": "Medium Rare Steak"},
+    {"imageURL": "assets/images/diet5.jpg", "name": "Fried Fish & Mushrooms"},
   ];
 
   List<Map<String, dynamic>> _ingredientsOrLessList = [
     {"imageURL": "assets/images/5Ingredients1.jpg", "name": "Bed & Breakfast"},
-    {"imageURL": "assets/images/5Ingredients2.jpg", "name": "Bed & Breakfast"},
-    {"imageURL": "assets/images/5Ingredients3.jpg", "name": "Bed & Breakfast"},
-    {"imageURL": "assets/images/5Ingredients4.jpg", "name": "Bed & Breakfast"},
-    {"imageURL": "assets/images/5Ingredients5.jpg", "name": "Bed & Breakfast"},
+    {
+      "imageURL": "assets/images/5Ingredients2.jpg",
+      "name": "Strawberry Cereal"
+    },
+    {
+      "imageURL": "assets/images/5Ingredients3.jpg",
+      "name": "Bread & Scrabbled Eggs"
+    },
+    {"imageURL": "assets/images/5Ingredients4.jpg", "name": "Milky OatMeal"},
+    {"imageURL": "assets/images/5Ingredients5.jpg", "name": "Croissants"},
   ];
 
   List<Map<String, dynamic>> _ingredientsList = [
@@ -57,19 +66,19 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         {
           "imageURL": "assets/images/chicken3.jpg",
-          "name": "Roasted Chicken with Parmasean Cheese",
+          "name": "Steam Baked Chicken",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 45 mins"
         },
         {
           "imageURL": "assets/images/chicken4.jpg",
-          "name": "Chicken Wings with Red Hot Sauce",
+          "name": "Chicken Salad",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 30 mins"
         },
         {
           "imageURL": "assets/images/chicken5.jpg",
-          "name": "Roasted Chicken with Parmasean Cheese",
+          "name": "Chicken Wings with Red Hot Sauce",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
@@ -80,31 +89,31 @@ class _HomeScreenState extends State<HomeScreen> {
       "details": [
         {
           "imageURL": "assets/images/cheese1.jpg",
-          "name": "Roasted Chicken with Parmasean Cheese",
+          "name": "Chicken Cheese-Burger",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 1 hour"
         },
         {
           "imageURL": "assets/images/cheese2.jpg",
-          "name": "Chicken Nuggets with Mexican Tacos",
+          "name": "Cheesy Lasagna",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
         {
           "imageURL": "assets/images/cheese3.jpg",
-          "name": "Roasted Chicken with Parmasean Cheese",
+          "name": "Mac'N'Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "40 mins - 45 mins"
         },
         {
           "imageURL": "assets/images/cheese4.jpg",
-          "name": "Chicken Wings with Red Hot Sauce",
+          "name": "Chicken Cheese Sphagetti",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 30 mins"
         },
         {
           "imageURL": "assets/images/cheese5.jpg",
-          "name": "Roasted Chicken with Parmasean Cheese",
+          "name": "Cheesy Oatmeal",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
@@ -220,12 +229,12 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, String>> _mostPopularList = [
     {
       "imageURL": "assets/images/popular1.jpg",
-      "name": "Chicken Pizza",
+      "name": "Boiled Rice with Smoked Salmon",
       "subtitle": ""
     },
     {
       "imageURL": "assets/images/popular2.jpg",
-      "name": "Rice with Salmon Slices",
+      "name": "Chicken & Cheese Pizza",
       "subtitle": ""
     },
     {
@@ -240,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
     },
     {
       "imageURL": "assets/images/popular5.jpg",
-      "name": "Chicken Pizza",
+      "name": "Devilled Fish with Soy Sauce",
       "subtitle": ""
     },
   ];
@@ -310,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   ),
                   child: TextField(
                     keyboardType: TextInputType.text,
@@ -356,6 +365,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             "For You",
                             style: _currentPageIndex == 0
                                 ? Theme.of(context).textTheme.body2.copyWith(
+                                    fontSize: 14,
                                     color: Theme.of(context).accentColor)
                                 : Theme.of(context).textTheme.body2,
                             textAlign: TextAlign.center,
@@ -385,6 +395,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             "Most Popular",
                             style: _currentPageIndex == 1
                                 ? Theme.of(context).textTheme.body2.copyWith(
+                                    fontSize: 14,
                                     color: Theme.of(context).accentColor)
                                 : Theme.of(context).textTheme.body2,
                             textAlign: TextAlign.center,
@@ -411,9 +422,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           width: _width * 0.285,
                           child: Text(
-                            "Ingredinets",
+                            "Ingredients",
                             style: _currentPageIndex == 2
                                 ? Theme.of(context).textTheme.body2.copyWith(
+                                    fontSize: 14,
                                     color: Theme.of(context).accentColor)
                                 : Theme.of(context).textTheme.body2,
                             textAlign: TextAlign.center,
@@ -465,11 +477,11 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
+              margin: EdgeInsets.only(top: _height * 0.018, bottom: Utils.getDesignHeight(10)),
               child: Text(
                 "Our Top Picks",
                 style:
-                    Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0),
+                    Theme.of(context).textTheme.body2.copyWith(fontSize: 18.0, fontWeight: FontWeight.w700),
               ),
             ),
             Container(
@@ -491,11 +503,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
+              margin: EdgeInsets.only(top: _height * 0.018, bottom: Utils.getDesignHeight(10)),
               child: Text(
                 "Your Diet",
                 style:
-                    Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0),
+                    Theme.of(context).textTheme.body2.copyWith(fontSize: 18.0, fontWeight: FontWeight.w700),
               ),
             ),
             Container(
@@ -517,11 +529,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
+              margin: EdgeInsets.only(top: _height * 0.018, bottom: Utils.getDesignHeight(10)),
               child: Text(
                 "5 Ingredients or Less",
                 style:
-                    Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0),
+                    Theme.of(context).textTheme.body2.copyWith(fontSize: 18.0, fontWeight: FontWeight.w700),
               ),
             ),
             Container(
@@ -719,7 +731,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .body2
-                                    .copyWith(fontSize: 10.0),
+                                    .copyWith(fontSize: 12.0),
                               ),
                             ),
                             CircleIcon(),
@@ -730,7 +742,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .body2
-                                    .copyWith(fontSize: 10.0),
+                                    .copyWith(fontSize: 12.0),
                               ),
                             ),
                             CircleIcon(),
@@ -739,7 +751,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: Theme.of(context)
                                   .textTheme
                                   .body2
-                                  .copyWith(fontSize: 10.0),
+                                  .copyWith(fontSize: 12.0),
                             ),
                           ],
                         ),
@@ -775,7 +787,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text(
               "45 mins - 1 hour",
               style: Theme.of(context).textTheme.body2.copyWith(
-                  color: Theme.of(context).accentColor, fontSize: 10.0),
+                  color: Theme.of(context).accentColor, fontSize: 12.0),
             ),
           ),
         ],
@@ -860,7 +872,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 "Protein",
                                 style:
                                     Theme.of(context).textTheme.body2.copyWith(
-                                          fontSize: 10.0,
+                                          fontSize: 12.0,
                                           color: Colors.white.withOpacity(0.8),
                                         ),
                               ),
@@ -874,7 +886,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 "Lunch",
                                 style:
                                     Theme.of(context).textTheme.body2.copyWith(
-                                          fontSize: 10.0,
+                                          fontSize: 12.0,
                                           color: Colors.white.withOpacity(0.8),
                                         ),
                               ),
@@ -885,7 +897,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               "Low Fat",
                               style: Theme.of(context).textTheme.body2.copyWith(
-                                    fontSize: 10.0,
+                                    fontSize: 12.0,
                                     color: Colors.white.withOpacity(0.8),
                                   ),
                             ),
@@ -931,6 +943,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(left: _width * 0.026),
@@ -958,9 +971,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Container(
             width: _width * 0.552,
-            margin: EdgeInsets.fromLTRB(_width * 0.026, _height * 0.012,
-                _width * 0.026, _height * 0.012),
+            margin: EdgeInsets.only(
+                left: Utils.getDesignWidth(10), right: Utils.getDesignWidth(5)),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
@@ -971,15 +986,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: _width * 0.33,
                         child: Text(
                           foodName,
-                          style: Theme.of(context).textTheme.body2,
+                          style: Theme.of(context)
+                              .textTheme
+                              .body2
+                              .copyWith(fontSize: 18),
                         ),
                       ),
-                      Container(
-                        child: Icon(
-                          Icons.favorite_border,
-                          color: Theme.of(context).accentColor,
-                          size: 20,
-                        ),
+                      Icon(
+                        Icons.favorite_border,
+                        color: Theme.of(context).accentColor,
+                        size: 22,
                       ),
                     ],
                   ),
@@ -996,7 +1012,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: Theme.of(context)
                               .textTheme
                               .body2
-                              .copyWith(fontSize: 10.0),
+                              .copyWith(fontSize: 12.0),
                         ),
                       ),
                       CircleIcon(),
@@ -1007,7 +1023,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: Theme.of(context)
                               .textTheme
                               .body2
-                              .copyWith(fontSize: 10.0),
+                              .copyWith(fontSize: 12.0),
                         ),
                       ),
                       CircleIcon(),
@@ -1016,25 +1032,34 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: Theme.of(context)
                             .textTheme
                             .body2
-                            .copyWith(fontSize: 10.0),
+                            .copyWith(fontSize: 12.0),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: _height * 0.005),
-                  child: Text(
-                    calories,
-                    style: Theme.of(context).textTheme.body2,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: _height * 0.013),
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    time,
-                    style: Theme.of(context).textTheme.body2.copyWith(
-                        fontSize: 10.0, color: Theme.of(context).accentColor),
+                  margin: EdgeInsets.only(top: Utils.getDesignHeight(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          calories,
+                          style: Theme.of(context).textTheme.body2.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          time,
+                          style: Theme.of(context).textTheme.body2.copyWith(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12.0,
+                              color: Theme.of(context).accentColor),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

@@ -37,7 +37,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentIndex,
-        height: _height * 0.08,
+//        height: _height * 0.08,
         buttonBackgroundColor: Theme.of(context).accentColor,
         backgroundColor: Theme.of(context).backgroundColor,
         items: <Widget>[
