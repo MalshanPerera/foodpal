@@ -19,14 +19,27 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Utils.setScreenSizes(context);
+
+    final _height = Utils.totalBodyHeight;
+    final _width = Utils.bodyWidth;
+
     return Scaffold(
       body: Center(
-        child: Text(
-          "FOODPAL",
-          style: Theme.of(context)
-              .textTheme
-              .title
-              .copyWith(color: Theme.of(context).accentColor),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: _height * 0.3,
+              child: Image.asset('assets/images/logo.png', fit: BoxFit.fitHeight,),
+            ),
+            Text(
+              "FOODPAL",
+              style: Theme.of(context)
+                  .textTheme
+                  .title
+                  .copyWith(color: Theme.of(context).accentColor),
+            ),
+          ],
         ),
       ),
     );
@@ -38,6 +51,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed(AllergiesDietScreenRoute);
+    Navigator.of(context).pushReplacementNamed(LoginScreenRoute);
   }
 }

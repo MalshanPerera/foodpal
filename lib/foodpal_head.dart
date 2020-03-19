@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/screens/Diet.dart';
 import 'package:foodpal/screens/Food_Details_Screen.dart';
 import 'package:foodpal/screens/cuisines_screen.dart';
 import 'package:foodpal/screens/favourites_screen.dart';
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
         SearchScreenRoute: (context) => SearchScreen(),
         AllergiesDietScreenRoute: (context) => AllergiesDietScreen(),
         CuisinesScreenRoute: (context) => CuisinesScreen(),
+        DietScreenRoute: (context) => DietScreen(),
       },
     );
   }

@@ -14,3 +14,4 @@ const String MainScreenRoute = '/main_screen';
 const String SearchScreenRoute = '/search_screen';
 const String AllergiesDietScreenRoute = '/allergies_diet_screen';
 const String CuisinesScreenRoute = '/cuisines_screen';
+const String DietScreenRoute = '/diet_screen';
