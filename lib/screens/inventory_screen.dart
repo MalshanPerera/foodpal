@@ -312,6 +312,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
           Container(
             margin: EdgeInsets.only(left: Utils.getDesignWidth(19)),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(top: Utils.getDesignHeight(10)),
