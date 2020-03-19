@@ -26,8 +26,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-            child: Column(children: <Widget>[
+        body: Column(children: <Widget>[
       Stack(children: <Widget>[
         Column(
           children: <Widget>[
@@ -234,30 +233,33 @@ class _InventoryScreenState extends State<InventoryScreen> {
           ],
         ),
       ),
-      Container(
-        margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
-        color: Theme.of(context).backgroundColor,
-        height: _height,
-        child: PageView(
-          controller: _controller,
-          scrollDirection: Axis.horizontal,
-          children: <Widget>[
-            ingredientList(),
-            ingredientList(),
-            ingredientList(),
-            ingredientList(),
-          ],
-          onPageChanged: (index) {
-            setState(() {
-              _currentPageIndex = index;
-            });
-          },
+      Expanded(
+        child: Container(
+          margin: EdgeInsets.only(top: Utils.getDesignHeight(15)),
+          color: Theme.of(context).backgroundColor,
+          height: _height,
+          child: PageView(
+            controller: _controller,
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
+              ingredientList(),
+              ingredientList(),
+              ingredientList(),
+              ingredientList(),
+            ],
+            onPageChanged: (index) {
+              setState(() {
+                _currentPageIndex = index;
+              });
+            },
+          ),
         ),
       ),
-    ])));
+    ]));
   }
-  Widget ingredientList(){
-   return  ListView.separated(
+
+  Widget ingredientList() {
+    return ListView.separated(
       separatorBuilder: (context, index) => Divider(
         color: Colors.grey,
       ),
@@ -268,6 +270,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
       ),
     );
   }
+
   Widget ingredientCard() {
     return Container(
       height: Utils.getDesignHeight(136),
