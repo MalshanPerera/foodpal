@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
+import 'package:foodpal/route_constants.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -21,7 +21,13 @@ class _SplashScreenState extends State<SplashScreen> {
     Utils.setScreenSizes(context);
     return Scaffold(
       body: Center(
-        child: Text("FOODPAL", style: Theme.of(context).textTheme.title.copyWith(color: Theme.of(context).accentColor),),
+        child: Text(
+          "FOODPAL",
+          style: Theme.of(context)
+              .textTheme
+              .title
+              .copyWith(color: Theme.of(context).accentColor),
+        ),
       ),
     );
   }
@@ -32,6 +38,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/food_detials_screen');
+    Navigator.of(context).pushReplacementNamed(LandingScreenRoute);
   }
 }

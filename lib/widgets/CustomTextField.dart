@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/helper/utils.dart';
 
 class CustomTextField extends StatefulWidget {
-  CustomTextField(
-      {Key key,
-      @required this.inputFieldName,
-      @required this.icon,
-      @required this.controller})
-      : super(key: key);
+  CustomTextField({
+    Key key,
+    @required this.inputFieldName,
+    @required this.icon,
+    this.controller,
+    this.isPassword = false,
+  }) : super(key: key);
 
   final String inputFieldName;
   final IconData icon;
+  final bool isPassword;
   TextEditingController controller;
 
   @override
@@ -17,18 +20,13 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  @override
-  void setState(fn) {
-    // TODO: implement setState
-    super.setState(fn);
-  }
-
   TextEditingController controller = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(6),
       child: TextField(
+        obscureText: widget.isPassword,
         controller: widget.controller,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
@@ -36,7 +34,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
             contentPadding: EdgeInsets.all(15.0),
             prefixIcon: Icon(widget.icon),
             hintText: widget.inputFieldName,
-            hintStyle: Theme.of(context).textTheme.body2),
+            hintStyle: Theme.of(context)
+                .textTheme
+                .body2
+                .copyWith(fontSize: Utils.bodyWidth * 0.035)),
       ),
     );
   }
