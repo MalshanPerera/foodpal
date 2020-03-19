@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:foodpal/helper/utils.dart';
+import 'package:foodpal/route_constants.dart';
 
 class DietScreen extends StatefulWidget {
   @override
@@ -9,12 +10,14 @@ class DietScreen extends StatefulWidget {
 }
 
 class _DietScreenState extends State<DietScreen> {
+
+  final _width = Utils.bodyWidth;
+  final _height = Utils.totalBodyHeight;
+
+  bool _isMale = true;
+
   @override
   Widget build(BuildContext context) {
-    final _width = Utils.bodyWidth;
-    final _height = Utils.totalBodyHeight;
-
-    bool _isMale = false;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -32,11 +35,11 @@ class _DietScreenState extends State<DietScreen> {
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.only(
-                        top: Utils.getDesignHeight(26.5),
+                        top: _height * 0.06,
                         left: Utils.getDesignWidth(26)),
                     child: AutoSizeText(
                       "Awesome! We're almost done!",
-                      style: Theme.of(context).textTheme.body2,
+                      style: Theme.of(context).textTheme.body2.copyWith(fontWeight: FontWeight.w600),
                       minFontSize: 15,
                       maxFontSize: 20,
                     ),
@@ -48,7 +51,7 @@ class _DietScreenState extends State<DietScreen> {
                         right: Utils.getDesignWidth(26)),
                     child: AutoSizeText(
                       "To get a better Healthy Diet we'll need some details about yourself ",
-                      style: Theme.of(context).textTheme.body2,
+                      style: Theme.of(context).textTheme.body2.copyWith(fontWeight: FontWeight.w600),
                       minFontSize: 15,
                       maxFontSize: 20,
                     ),
@@ -80,8 +83,8 @@ class _DietScreenState extends State<DietScreen> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: _isMale
-                                      ? Colors.white
-                                      : Theme.of(context).accentColor,
+                                      ? Theme.of(context).accentColor
+                                      : Colors.white,
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(5.0),
                                       bottomLeft: Radius.circular(5.0))),
@@ -91,24 +94,16 @@ class _DietScreenState extends State<DietScreen> {
                                   AutoSizeText(
                                     "Male",
                                     minFontSize: 15,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .body2
-                                        .copyWith(
-                                            color: _isMale
-                                                ? Theme.of(context)
-                                                    .highlightColor
-                                                : Colors.white),
+                                    style: Theme.of(context).textTheme.body2.copyWith(
+                                            color: _isMale ? Colors.white : Theme.of(context).highlightColor),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(left: Utils.getDesignWidth(5)),
-                                    child: Image.asset('assets/images/male.png'),                                  )
                                 ],
                               ),
                             ),
                             onTap: () {
                               setState(() {
-                                _isMale = false;
+                                _isMale = true;
+                                print(_isMale);
                               });
                             },
                           ),
@@ -119,8 +114,8 @@ class _DietScreenState extends State<DietScreen> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: _isMale
-                                      ? Theme.of(context).accentColor
-                                      : Colors.white,
+                                      ? Colors.white
+                                      : Theme.of(context).accentColor,
                                   borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(5.0),
                                       bottomRight: Radius.circular(5.0))),
@@ -134,21 +129,15 @@ class _DietScreenState extends State<DietScreen> {
                                         .textTheme
                                         .body2
                                         .copyWith(
-                                            color: _isMale
-                                                ? Colors.white
-                                                : Theme.of(context)
-                                                    .highlightColor),
+                                            color: _isMale ? Theme.of(context).highlightColor : Colors.white),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(left: Utils.getDesignWidth(5)),
-                                    child: Image.asset('assets/images/woman.png'),
-                                  )
                                 ],
                               ),
                             ),
                             onTap: () {
                               setState(() {
-                                _isMale = true;
+                                _isMale = false;
+                                print(_isMale);
                               });
                             },
                           )
@@ -389,20 +378,18 @@ class _DietScreenState extends State<DietScreen> {
                     ],
                   ),
                   Container(
-                    width: Utils.getDesignWidth(323),
-                    margin: EdgeInsets.only(
-                        top: Utils.getDesignHeight(130),
-                        left: Utils.getDesignWidth(26),
-                        right: Utils.getDesignWidth(26)),
+                    margin: EdgeInsets.only(top: _height * 0.07, left: Utils.getDesignWidth(26), right: Utils.getDesignWidth(26)),
+                    height: _height * 0.06,
+                    width: _width,
                     child: RaisedButton(
-                      color: Theme.of(context).primaryColor,
-                      onPressed: () {},
-                      child: Text(
-                        'Start Cooking',
-                        style: Theme.of(context).textTheme.body1,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(7.0))
                       ),
+                      color: Theme.of(context).accentColor,
+                      child: Text("Start Cooking", style: Theme.of(context).textTheme.button.copyWith(fontSize: 16.0),),
+                      onPressed: () => Navigator.pushNamed(context, HomeScreenRoute),
                     ),
-                  )
+                  ),
                 ])),
       ),
     );

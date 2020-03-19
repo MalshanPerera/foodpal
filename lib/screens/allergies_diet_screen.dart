@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
+import 'package:foodpal/presentation/custom_icons_icons.dart';
 import 'package:foodpal/route_constants.dart';
 import 'package:foodpal/widgets/circle_container.dart';
 
@@ -52,11 +53,11 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  child: Text("Let Us Get to Know Each Other More!", style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0, fontWeight: FontWeight.w500),),
+                  child: Text("Let Us Get to Know Each Other More!", style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0, fontWeight: FontWeight.w600),),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: _height * 0.01),
-                  child: Text("Do you have any Allergies or Diets?", style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0, fontWeight: FontWeight.w500),),
+                  child: Text("Do you have any Allergies or Diets?", style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0, fontWeight: FontWeight.w600),),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: _height * 0.02),
@@ -123,14 +124,14 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   InkWell(
-                                    child: _listTile(Icons.favorite, "Gluten-Free", _isOne ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                    child: _listTile(CustomIcons.wheat, "Gluten-Free", _isOne ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isOne =! _isOne;
                                       });
                                   },),
                                   InkWell(
-                                    child: _listTile(Icons.favorite, "Peanut-Free", _isTwo ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                    child: _listTile(CustomIcons.peanut, "Peanut-Free", _isTwo ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isTwo =! _isTwo;
@@ -144,13 +145,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Seafood-Free", _isThree ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.shrimp, "Seafood-Free", _isThree ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isThree =! _isThree;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Sesame-Free", _isFour ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.sesame, "Sesame-Free", _isFour ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isFour =! _isFour;
@@ -171,13 +172,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Wheat-Free", _isFive ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.wheat__1_, "Wheat-Free", _isFive ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isFive =! _isFive;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Egg-Free", _isSix ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.egg, "Egg-Free", _isSix ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isSix =! _isSix;
@@ -191,13 +192,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Dairy-Free", _isSeven ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.dairy_product, "Dairy-Free", _isSeven ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isSeven =! _isSeven;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Soy-Free", _isEight ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.sesame, "Soy-Free", _isEight ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isEight =! _isEight;
@@ -231,13 +232,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                                 mainAxisAlignment: MainAxisAlignment
                                     .spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Ketogenic", _isNine ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.ketogenic_diet, "Ketogenic", _isNine ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isNine =! _isNine;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Lacto Vegetarian", _isTen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.food, "Lacto Vegetarian", _isTen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isTen =! _isTen;
@@ -251,13 +252,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Ovo Vegetarian", _isEleven ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.food__1_, "Ovo Vegetarian", _isEleven ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isEleven =! _isEleven;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Pescetarian", _isTwelve ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.dolly_fish, "Pescetarian", _isTwelve ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isTwelve =! _isTwelve;
@@ -279,13 +280,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                                 mainAxisAlignment: MainAxisAlignment
                                     .spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Lacto-Ovo Vegetarian", _isThirteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.milk, "Lacto-Ovo Vegetarian", _isThirteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isThirteen =! _isThirteen;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Paleo", _isFourteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.food, "Paleo", _isFourteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isFourteen =! _isFourteen;
@@ -299,13 +300,13 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  InkWell(child: _listTile(Icons.favorite, "Vegan", _isFifteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.wheat, "Vegan", _isFifteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isFifteen =! _isFifteen;
                                       });
                                     },),
-                                  InkWell(child: _listTile(Icons.favorite, "Non-Veg", _isSixteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
+                                  InkWell(child: _listTile(CustomIcons.wheat__1_, "Non-Veg", _isSixteen ? Theme.of(context).accentColor : Theme.of(context).highlightColor),
                                     onTap: () {
                                       setState(() {
                                         _isSixteen =! _isSixteen;
@@ -344,7 +345,7 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
                     ),
                     color: Theme.of(context).accentColor,
                     child: Text("Next", style: Theme.of(context).textTheme.button.copyWith(fontSize: 16.0),),
-                    onPressed: () => Navigator.pushNamed(context, CuisinesScreenRoute),
+                    onPressed: () => Navigator.pushNamed(context, DietScreenRoute),
                   ),
                 ),
                 Expanded(
@@ -371,9 +372,10 @@ class _AllergiesDietScreenState extends State<AllergiesDietScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            child: Icon(icon),
+            child: Icon(icon, size: 40, color: Theme.of(context).highlightColor,),
           ),
           Container(
+            margin: EdgeInsets.only(top: _height * 0.025,),
             child: Text(title, style: Theme.of(context).textTheme.body2.copyWith(fontSize: 16.0, fontWeight: FontWeight.w500),),
           ),
         ],

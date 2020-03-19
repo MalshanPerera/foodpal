@@ -45,7 +45,12 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: Utils.getDesignHeight(211)),
+                    margin: EdgeInsets.only(top: Utils.getDesignHeight(82)),
+                    height: Utils.getDesignHeight(115),
+                    child: Image.asset('assets/images/logo.png', fit: BoxFit.fitHeight,),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: Utils.getDesignHeight(30)),
                     child: SizedBox(
                       width: Utils.getDesignWidth(263),
                       height: Utils.getDesignHeight(53),

@@ -78,7 +78,7 @@ class _SignUpOtpScreenState extends State<SignUpOtpScreen> {
                         ),
                         onPressed: (() {
                           Navigator.of(context).pushNamedAndRemoveUntil(
-                              HomeScreenRoute, (_) => false);
+                              CuisinesScreenRoute, (_) => false);
                         })),
                   ),
                   Container(

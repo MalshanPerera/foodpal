@@ -478,11 +478,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: _topPicksList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: _forYouTabListTile(
-                      imagePath: _topPicksList[index]["imageURL"],
-                      name: _topPicksList[index]["name"],
+                  return InkWell(
+                    child: Container(
+                      child: _forYouTabListTile(
+                        imagePath: _topPicksList[index]["imageURL"],
+                        name: _topPicksList[index]["name"],
+                      ),
                     ),
+                    onTap: () => Navigator.pushNamed(context, FoodDetailsScreenRoute),
                   );
                 },
               ),
@@ -501,11 +504,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: _yourDietList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: _forYouTabListTile(
-                      imagePath: _yourDietList[index]["imageURL"],
-                      name: _yourDietList[index]["name"],
+                  return InkWell(
+                    child: Container(
+                      child: _forYouTabListTile(
+                        imagePath: _yourDietList[index]["imageURL"],
+                        name: _yourDietList[index]["name"],
+                      ),
                     ),
+                    onTap: () => Navigator.pushNamed(context, FoodDetailsScreenRoute),
                   );
                 },
               ),
@@ -524,11 +530,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: _ingredientsOrLessList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: _forYouTabListTile(
-                      imagePath: _ingredientsOrLessList[index]["imageURL"],
-                      name: _ingredientsOrLessList[index]["name"],
+                  return InkWell(
+                    child: Container(
+                      child: _forYouTabListTile(
+                        imagePath: _ingredientsOrLessList[index]["imageURL"],
+                        name: _ingredientsOrLessList[index]["name"],
+                      ),
                     ),
+                    onTap: () => Navigator.pushNamed(context, FoodDetailsScreenRoute),
                   );
                 },
               ),

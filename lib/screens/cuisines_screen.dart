@@ -236,7 +236,7 @@ class _CuisinesScreen extends State<CuisinesScreen> {
                     ),
                     color: Theme.of(context).accentColor,
                     child: Text("Next", style: Theme.of(context).textTheme.button.copyWith(fontSize: 16.0),),
-                    onPressed: () => Navigator.pushNamed(context, CuisinesScreenRoute),
+                    onPressed: () => Navigator.pushNamed(context, AllergiesDietScreenRoute),
                   ),
                 ),
                 Expanded(

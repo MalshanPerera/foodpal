@@ -28,7 +28,12 @@ class _ForgotPasswordOTPScreenState extends State<ForgotPasswordOTPScreen> {
                 ),
                 child: Column(children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: Utils.getDesignHeight(228)),
+                    margin: EdgeInsets.only(top: Utils.getDesignHeight(82)),
+                    height: Utils.getDesignHeight(115),
+                    child: Image.asset('assets/images/logo.png', fit: BoxFit.fitHeight,),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: Utils.getDesignHeight(30)),
                     child: SizedBox(
                         width: Utils.getDesignWidth(210),
                         height: Utils.getDesignHeight(30),
