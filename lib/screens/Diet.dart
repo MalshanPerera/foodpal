@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:foodpal/helper/utils.dart';
 
 class DietScreen extends StatefulWidget {
@@ -66,7 +67,7 @@ class _DietScreenState extends State<DietScreen> {
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                      top: Utils.getDesignHeight(14),
+                        top: Utils.getDesignHeight(14),
                         left: Utils.getDesignWidth(26),
                         right: Utils.getDesignWidth(26)),
                     child: Row(
@@ -94,15 +95,14 @@ class _DietScreenState extends State<DietScreen> {
                                         .textTheme
                                         .body2
                                         .copyWith(
-
                                             color: _isMale
                                                 ? Theme.of(context)
                                                     .highlightColor
                                                 : Colors.white),
                                   ),
                                   Container(
-                                    child: Icon(Icons.search),
-                                  )
+                                    margin: EdgeInsets.only(left: Utils.getDesignWidth(5)),
+                                    child: Image.asset('assets/images/male.png'),                                  )
                                 ],
                               ),
                             ),
@@ -130,7 +130,6 @@ class _DietScreenState extends State<DietScreen> {
                                   AutoSizeText(
                                     "Female",
                                     minFontSize: 15,
-
                                     style: Theme.of(context)
                                         .textTheme
                                         .body2
@@ -138,10 +137,11 @@ class _DietScreenState extends State<DietScreen> {
                                             color: _isMale
                                                 ? Colors.white
                                                 : Theme.of(context)
-                                                .highlightColor),
+                                                    .highlightColor),
                                   ),
                                   Container(
-                                    child: Icon(Icons.search),
+                                    margin: EdgeInsets.only(left: Utils.getDesignWidth(5)),
+                                    child: Image.asset('assets/images/woman.png'),
                                   )
                                 ],
                               ),
@@ -154,6 +154,255 @@ class _DietScreenState extends State<DietScreen> {
                           )
                         ]),
                   ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: Utils.getDesignHeight(11),
+                        left: Utils.getDesignWidth(26),
+                        right: Utils.getDesignWidth(26)),
+                    child: AutoSizeText(
+                      "What is your height ?",
+                      minFontSize: 15,
+                      maxFontSize: 20,
+                      style: Theme.of(context).textTheme.body2,
+                    ),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: Utils.getDesignHeight(14),
+                            left: Utils.getDesignWidth(26),
+                            right: Utils.getDesignWidth(26)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).hintColor,
+                                blurRadius: 10.0,
+                                spreadRadius: 12.0,
+                                offset: Offset(
+                                  0.0, // horizontal, move right 10
+                                  5.0, // vertical, move down 10
+                                ),
+                              )
+                            ]),
+                        width: Utils.getDesignWidth(64),
+                        height: Utils.getDesignHeight(39),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: "Value",
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: Utils.getDesignHeight(14),
+                            left: Utils.getDesignWidth(26),
+                            right: Utils.getDesignWidth(26)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).hintColor,
+                                blurRadius: 10.0,
+                                spreadRadius: 12.0,
+                                offset: Offset(
+                                  0.0, // horizontal, move right 10
+                                  5.0, // vertical, move down 10
+                                ),
+                              )
+                            ]),
+                        width: Utils.getDesignWidth(64),
+                        height: Utils.getDesignHeight(39),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: "Unit",
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: Utils.getDesignHeight(11),
+                        left: Utils.getDesignWidth(26),
+                        right: Utils.getDesignWidth(26)),
+                    child: AutoSizeText(
+                      "What is your weight ?",
+                      minFontSize: 15,
+                      maxFontSize: 20,
+                      style: Theme.of(context).textTheme.body2,
+                    ),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: Utils.getDesignHeight(14),
+                            left: Utils.getDesignWidth(26),
+                            right: Utils.getDesignWidth(26)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).hintColor,
+                                blurRadius: 10.0,
+                                spreadRadius: 12.0,
+                                offset: Offset(
+                                  0.0, // horizontal, move right 10
+                                  5.0, // vertical, move down 10
+                                ),
+                              )
+                            ]),
+                        width: Utils.getDesignWidth(64),
+                        height: Utils.getDesignHeight(39),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: "Value",
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: Utils.getDesignHeight(14),
+                            left: Utils.getDesignWidth(26),
+                            right: Utils.getDesignWidth(26)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).hintColor,
+                                blurRadius: 10.0,
+                                spreadRadius: 12.0,
+                                offset: Offset(
+                                  0.0, // horizontal, move right 10
+                                  5.0, // vertical, move down 10
+                                ),
+                              )
+                            ]),
+                        width: Utils.getDesignWidth(64),
+                        height: Utils.getDesignHeight(39),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: "Unit",
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: Utils.getDesignHeight(11),
+                        left: Utils.getDesignWidth(26),
+                        right: Utils.getDesignWidth(26)),
+                    child: AutoSizeText(
+                      "How old are you ?",
+                      minFontSize: 15,
+                      maxFontSize: 20,
+                      style: Theme.of(context).textTheme.body2,
+                    ),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: Utils.getDesignHeight(14),
+                            left: Utils.getDesignWidth(26),
+                            right: Utils.getDesignWidth(26)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).hintColor,
+                                blurRadius: 10.0,
+                                spreadRadius: 12.0,
+                                offset: Offset(
+                                  0.0, // horizontal, move right 10
+                                  5.0, // vertical, move down 10
+                                ),
+                              )
+                            ]),
+                        width: Utils.getDesignWidth(64),
+                        height: Utils.getDesignHeight(39),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: "Value",
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                            top: Utils.getDesignHeight(14),
+                            left: Utils.getDesignWidth(26),
+                            right: Utils.getDesignWidth(26)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Theme.of(context).hintColor,
+                                blurRadius: 10.0,
+                                spreadRadius: 12.0,
+                                offset: Offset(
+                                  0.0, // horizontal, move right 10
+                                  5.0, // vertical, move down 10
+                                ),
+                              )
+                            ]),
+                        width: Utils.getDesignWidth(64),
+                        height: Utils.getDesignHeight(39),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: "Unit",
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    width: Utils.getDesignWidth(323),
+                    margin: EdgeInsets.only(
+                        top: Utils.getDesignHeight(130),
+                        left: Utils.getDesignWidth(26),
+                        right: Utils.getDesignWidth(26)),
+                    child: RaisedButton(
+                      color: Theme.of(context).primaryColor,
+                      onPressed: () {},
+                      child: Text(
+                        'Start Cooking',
+                        style: Theme.of(context).textTheme.body1,
+                      ),
+                    ),
+                  )
                 ])),
       ),
     );
