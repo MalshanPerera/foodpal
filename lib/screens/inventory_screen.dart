@@ -393,8 +393,8 @@ class _InventoryScreenState extends State<InventoryScreen> {
               margin: EdgeInsets.only(bottom: Utils.getDesignHeight(15)),
               child: AutoSizeText(
                 "Green Grapes",
-                minFontSize: 16,
-                maxFontSize: 18,
+                minFontSize: 14,
+                maxFontSize: 16,
               ))),
     );
   }
