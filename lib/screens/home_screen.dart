@@ -487,7 +487,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: _topPicksList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
                       child: _forYouTabListTile(
                         imagePath: _topPicksList[index]["imageURL"],
                         name: _topPicksList[index]["name"],
@@ -511,7 +510,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: _yourDietList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
                     child: _forYouTabListTile(
                       imagePath: _yourDietList[index]["imageURL"],
                       name: _yourDietList[index]["name"],
@@ -535,7 +533,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: _ingredientsOrLessList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                      padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
                       child: _forYouTabListTile(
                         imagePath: _ingredientsOrLessList[index]["imageURL"],
                         name: _ingredientsOrLessList[index]["name"],
