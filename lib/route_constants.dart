@@ -12,3 +12,4 @@ const String InventoryScreenRoute = '/inventory_screen';
 const String FoodDetailsScreenRoute = '/food_details_screen';
 const String MainScreenRoute = '/main_screen';
 const String SearchScreenRoute = '/search_screen';
+const String DietScreenRoute = '/diet_screen';
