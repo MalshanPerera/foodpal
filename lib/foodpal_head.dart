@@ -4,7 +4,6 @@ import 'package:foodpal/screens/favourites_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_email_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_otp_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_screen.dart';
-
 import 'package:foodpal/screens/home_screen.dart';
 import 'package:foodpal/screens/inventory_screen.dart';
 import 'package:foodpal/screens/landing_screeen.dart';
