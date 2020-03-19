@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpal/helper/utils.dart';
+import 'package:foodpal/presentation/custom_icons_icons.dart';
 import 'package:foodpal/screens/favourites_screen.dart';
 import 'package:foodpal/screens/home_screen.dart';
 import 'package:foodpal/screens/inventory_screen.dart';
@@ -40,8 +41,8 @@ class _MainScreenState extends State<MainScreen> {
         buttonBackgroundColor: Theme.of(context).accentColor,
         backgroundColor: Theme.of(context).backgroundColor,
         items: <Widget>[
-          Icon(Icons.assignment, size: 30, color: _currentIndex  == 0 ? Colors.white : Theme.of(context).highlightColor),
-          Icon(Icons.list, size: 30, color: _currentIndex  == 1 ? Colors.white : Theme.of(context).highlightColor),
+          Icon(CustomIcons.inventory, size: 25, color: _currentIndex  == 0 ? Colors.white : Theme.of(context).highlightColor),
+          Icon(CustomIcons.home, size: 28, color: _currentIndex  == 1 ? Colors.white : Theme.of(context).highlightColor),
           Icon(Icons.favorite, size: 30, color: _currentIndex  == 2 ? Colors.white : Theme.of(context).highlightColor),
         ],
         onTap: (index) {
