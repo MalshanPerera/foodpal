@@ -15,6 +15,75 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentPageIndex = 0;
 
+  List<Map<String, dynamic>> _topPicksList = [
+    {
+      "imageURL": "assets/images/topPicks1.jpg",
+      "name": "French Toast"
+    },
+    {
+      "imageURL": "assets/images/topPicks2.jpg",
+      "name": "French Toast"
+    },
+    {
+      "imageURL": "assets/images/topPick3.jpg",
+      "name": "French Toast"
+    },
+    {
+      "imageURL": "assets/images/topPicks4.jpg",
+      "name": "French Toast"
+    },
+    {
+      "imageURL": "assets/images/topPicks5.jpg",
+      "name": "French Toast"
+    },
+  ];
+
+  List<Map<String, dynamic>> _yourDietList = [
+    {
+      "imageURL": "assets/images/diet1.jpg",
+      "name": "Morning Salad"
+    },
+    {
+      "imageURL": "assets/images/diet2.jpg",
+      "name": "Morning Salad"
+    },
+    {
+      "imageURL": "assets/images/diet3.jpg",
+      "name": "Morning Salad"
+    },
+    {
+      "imageURL": "assets/images/diet4.jpg",
+      "name": "Morning Salad"
+    },
+    {
+      "imageURL": "assets/images/diet5.jpg",
+      "name": "Morning Salad"
+    },
+  ];
+
+  List<Map<String, dynamic>> _ingredientsOrLessList = [
+    {
+      "imageURL": "assets/images/5Ingredients1.jpg",
+      "name": "Bed & Breakfast"
+    },
+    {
+      "imageURL": "assets/images/5Ingredients2.jpg",
+      "name": "Bed & Breakfast"
+    },
+    {
+      "imageURL": "assets/images/5Ingredients3.jpg",
+      "name": "Bed & Breakfast"
+    },
+    {
+      "imageURL": "assets/images/5Ingredients4.jpg",
+      "name": "Bed & Breakfast"
+    },
+    {
+      "imageURL": "assets/images/5Ingredients5.jpg",
+      "name": "Bed & Breakfast"
+    },
+  ];
+
   List<Map<String, dynamic>> _ingredientsList = [
     {
       "ingredient": "Chicken",
@@ -237,162 +306,242 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Column(
+      body: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: _width,
+                    height: _height * 0.28,
+                    child: Image.asset('assets/images/home_background_image.png', fit: BoxFit.fill,),
+                  ),
+                  Container(
+                    width: _width,
+                    height: _height * 0.03,
+                    color: Theme.of(context).backgroundColor,
+                  ),
+                ],
+              ),
+              Positioned(
+                top: _height * 0.068,
+                left: _width * 0.069,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      width: _width,
-                      height: _height * 0.28,
-                      child: Image.asset('assets/images/home_background_image.png', fit: BoxFit.fill,),
+                      child: Text("Home", style: Theme.of(context).textTheme.title,),
                     ),
                     Container(
-                      width: _width,
-                      height: _height * 0.03,
-                      color: Theme.of(context).backgroundColor,
+                      child: Text("Time for some Breakfast", style: Theme.of(context).textTheme.body1,),
                     ),
                   ],
                 ),
-                Positioned(
-                  top: _height * 0.068,
-                  left: _width * 0.069,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              Positioned(
+                top: _height * 0.17,
+                left: _width * 0.069,
+                right: _width * 0.069,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  ),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.all(15.0),
+                        prefixIcon: Icon(Icons.search),
+                        hintText: "Search here...",
+                        hintStyle: Theme.of(context).textTheme.body2
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: _height * 0.25,
+                left: _width * 0.069,
+                right: _width * 0.069,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Theme.of(context).hintColor,
+                        blurRadius: 1.0,
+                        offset: Offset(
+                          0.0, // horizontal, move right 10
+                          1.0, // vertical, move down 10
+                        ),
+                      )
+                    ],
+                  ),
+                  height:  _height * 0.05,
+                  child: Row(
                     children: <Widget>[
-                      Container(
-                        child: Text("Home", style: Theme.of(context).textTheme.title,),
+                      InkWell(
+                        child: Container(
+                          width: _width * 0.285,
+                          child: Text("For You",
+                            style: _currentPageIndex == 0 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _controller.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
+                            _currentPageIndex = 0;
+                          });
+                        },
                       ),
                       Container(
-                        child: Text("Time for some Breakfast", style: Theme.of(context).textTheme.body1,),
+                        margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
+                        color: Theme.of(context).highlightColor,
+                        width: 0.5,
+                      ),
+                      InkWell(
+                        child: Container(
+                          width: _width * 0.285,
+                          child: Text("Most Popular",
+                            style: _currentPageIndex == 1 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _controller.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
+                            _currentPageIndex = 1;
+                          });
+                        },
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
+                        color: Theme.of(context).highlightColor,
+                        width: 0.5,
+                      ),
+                      InkWell(
+                        child: Container(
+                          width: _width * 0.285,
+                          child: Text("Ingredinets",
+                            style: _currentPageIndex == 2 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _controller.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
+                            _currentPageIndex = 2;
+                          });
+                        },
                       ),
                     ],
                   ),
                 ),
-                Positioned(
-                  top: _height * 0.17,
-                  left: _width * 0.069,
-                  right: _width * 0.069,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    ),
-                    child: TextField(
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.all(15.0),
-                          prefixIcon: Icon(Icons.search),
-                          hintText: "Search here...",
-                          hintStyle: Theme.of(context).textTheme.body2
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: _height * 0.25,
-                  left: _width * 0.069,
-                  right: _width * 0.069,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Theme.of(context).hintColor,
-                          blurRadius: 1.0,
-                          offset: Offset(
-                            0.0, // horizontal, move right 10
-                            1.0, // vertical, move down 10
-                          ),
-                        )
-                      ],
-                    ),
-                    height:  _height * 0.05,
-                    child: Row(
-                      children: <Widget>[
-                        InkWell(
-                          child: Container(
-                            width: _width * 0.285,
-                            child: Text("For You",
-                              style: _currentPageIndex == 0 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          onTap: () {
-                            setState(() {
-                              _controller.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
-                              _currentPageIndex = 0;
-                            });
-                          },
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
-                          color: Theme.of(context).highlightColor,
-                          width: 0.5,
-                        ),
-                        InkWell(
-                          child: Container(
-                            width: _width * 0.285,
-                            child: Text("Most Popular",
-                              style: _currentPageIndex == 1 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          onTap: () {
-                            setState(() {
-                              _controller.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
-                              _currentPageIndex = 1;
-                            });
-                          },
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: _height * 0.007, bottom: _height * 0.007),
-                          color: Theme.of(context).highlightColor,
-                          width: 0.5,
-                        ),
-                        InkWell(
-                          child: Container(
-                            width: _width * 0.285,
-                            child: Text("Ingredinets",
-                              style: _currentPageIndex == 2 ? Theme.of(context).textTheme.body2.copyWith(color: Theme.of(context).accentColor) : Theme.of(context).textTheme.body2,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          onTap: () {
-                            setState(() {
-                              _controller.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn,);
-                              _currentPageIndex = 2;
-                            });
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+              ),
+            ],
+          ),
+          Expanded(
+            child: PageView(
+            controller: _controller,
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
+              _forYouTab(),
+              _mostPopularTab(),
+              _ingredientsTab(),
+            ],
+            onPageChanged: (index){
+              setState(() {
+                _currentPageIndex = index;
+              });
+            },
+          ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _forYouTab(){
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.only(left: _width * 0.069, bottom: _height * 0.018),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
+              child: Text("Our Top Picks", style: Theme
+                  .of(context)
+                  .textTheme
+                  .body2
+                  .copyWith(fontSize: 16.0),),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: _height * 0.05),
-              color: Theme.of(context).backgroundColor,
-              height: _height,
-              child: PageView(
-              controller: _controller,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                _forYouTab(),
-                _mostPopular(),
-                _ingredientsTab(),
-              ],
-              onPageChanged: (index){
-                setState(() {
-                  _currentPageIndex = index;
-                });
-              },
+              height: _height * 0.275,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _topPicksList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
+                      child: _forYouTabListTile(
+                        imagePath: _topPicksList[index]["imageURL"],
+                        name: _topPicksList[index]["name"],
+                      ),
+                  );
+                },
+              ),
             ),
+            Container(
+              margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
+              child: Text("Your Diet", style: Theme
+                  .of(context)
+                  .textTheme
+                  .body2
+                  .copyWith(fontSize: 16.0),),
+            ),
+            Container(
+              height: _height * 0.275,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _yourDietList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
+                    child: _forYouTabListTile(
+                      imagePath: _yourDietList[index]["imageURL"],
+                      name: _yourDietList[index]["name"],
+                    ),
+                  );
+                },
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
+              child: Text("5 Ingredients or Less", style: Theme
+                  .of(context)
+                  .textTheme
+                  .body2
+                  .copyWith(fontSize: 16.0),),
+            ),
+            Container(
+              height: _height * 0.275,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _ingredientsOrLessList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                      padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
+                      child: _forYouTabListTile(
+                        imagePath: _ingredientsOrLessList[index]["imageURL"],
+                        name: _ingredientsOrLessList[index]["name"],
+                      ),
+                  );
+                },
+              ),
             ),
           ],
         ),
@@ -400,79 +549,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _forYouTab(){
-    return Padding(
-      padding: EdgeInsets.only(left: _width * 0.069),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
-            child: Text("Our Top Picks", style: Theme
-                .of(context)
-                .textTheme
-                .body2
-                .copyWith(fontSize: 16.0),),
-          ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
-                    child: _forYouTabListTile());
-              },
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
-            child: Text("Your Diet", style: Theme
-                .of(context)
-                .textTheme
-                .body2
-                .copyWith(fontSize: 16.0),),
-          ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                    padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
-                    child: _forYouTabListTile());
-              },
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: _height * 0.018, bottom: 5.0),
-            child: Text("5 Ingredients or Less", style: Theme
-                .of(context)
-                .textTheme
-                .body2
-                .copyWith(fontSize: 16.0),),
-          ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                    padding: EdgeInsets.only(top: _height * 0.005, bottom: _height * 0.005),
-                    child: _forYouTabListTile());
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _mostPopular(){
+  Widget _mostPopularTab(){
     return Container(
       child: ListView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
         itemCount: _mostPopularList.length,
         itemBuilder: (BuildContext context, int index) {
           return _mostPopularListTile(index);
@@ -485,7 +565,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: _height * 0.015, left: _width * 0.069, right: _width * 0.069,),
+          margin: EdgeInsets.only(top: _height * 0.015, left: _width * 0.069, right: _width * 0.069, bottom: _height * 0.01),
           height: _height * 0.04,
           width: _width,
           child: ListView.builder(
@@ -524,8 +604,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.only(top: _height * 0.03),
+            padding: EdgeInsets.only(top: _height * 0.015),
             itemCount: _ingredientsList[_currentIngredientIndex]["details"].length,
             itemBuilder: (BuildContext context, int index) {
               return _ingredientListTile(
@@ -541,7 +620,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _forYouTabListTile(){
+  Widget _forYouTabListTile({String imagePath, String name}){
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -570,7 +649,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0)),
                     image: DecorationImage(
                         image: AssetImage(
-                            'assets/images/topPicks1.jpg'),
+                            imagePath),
                         fit: BoxFit.fitWidth),
                   ),
                 ),
@@ -592,7 +671,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   margin: EdgeInsets.only(top: _height * 0.15, left: _width * 0.018, right: _width * 0.018),
                   child: Container(
-                    child: Text("French Toast", style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.w500),),
+                    child: Text(name, style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.w500),),
                   ),
                 ),
               ]
@@ -773,6 +852,22 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(left: _width * 0.026),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+//              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              boxShadow: [
+                BoxShadow(
+                  color: Theme.of(context).hintColor,
+                  blurRadius: 5.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(
+                    0.0, // horizontal, move right 10
+                    2.0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
             child: CircleAvatar(
               backgroundColor: Theme.of(context).accentColor,
                radius: _width * 0.116,
