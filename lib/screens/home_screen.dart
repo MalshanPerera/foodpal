@@ -20,31 +20,31 @@ class _HomeScreenState extends State<HomeScreen> {
       "ingredient": "Chicken",
       "details": [
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/chicken1.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/chicken2.jpg",
           "name": "Chicken Nuggets with Mexican Tacos",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/chicken3.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 45 mins"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/chicken4.jpg",
           "name": "Chicken Wings with Red Hot Sauce",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 30 mins"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/chicken5.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
@@ -55,31 +55,31 @@ class _HomeScreenState extends State<HomeScreen> {
       "ingredient": "Cheese",
       "details": [
         {
-          "imageURL": "assets/images/foodImageOne.png",
+          "imageURL": "assets/images/cheese1.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageOne.png",
+          "imageURL": "assets/images/cheese2.jpg",
           "name": "Chicken Nuggets with Mexican Tacos",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageOne.png",
+          "imageURL": "assets/images/cheese3.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "40 mins - 45 mins"
         },
         {
-          "imageURL": "assets/images/foodImageOne.png",
+          "imageURL": "assets/images/cheese4.jpg",
           "name": "Chicken Wings with Red Hot Sauce",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 30 mins"
         },
         {
-          "imageURL": "assets/images/foodImageOne.png",
+          "imageURL": "assets/images/cheese5.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
@@ -87,34 +87,34 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
     },
     {
-      "ingredient": "Breed",
+      "ingredient": "Bread",
       "details": [
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/bread1.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/bread2.jpg",
           "name": "Chicken Nuggets with Mexican Tacos",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/bread3.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 45 mins"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/bread4.jpg",
           "name": "Chicken Wings with Red Hot Sauce",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 30 mins"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/bread5.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
@@ -122,28 +122,34 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
     },
     {
-      "ingredient": "Bacon",
+      "ingredient": "Eggs",
       "details": [
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/eggs1.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/eggs2.jpg",
           "name": "Chicken Nuggets with Mexican Tacos",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/eggs3.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 45 mins"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/eggs4.jpg",
+          "name": "Chicken Wings with Red Hot Sauce",
+          "cal": "1235 Kcal (500g)",
+          "time": "20 mins - 30 mins"
+        },
+        {
+          "imageURL": "assets/images/eggs5.jpg",
           "name": "Chicken Wings with Red Hot Sauce",
           "cal": "1235 Kcal (500g)",
           "time": "20 mins - 30 mins"
@@ -154,24 +160,64 @@ class _HomeScreenState extends State<HomeScreen> {
       "ingredient": "Milk",
       "details": [
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/milk1.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "45 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/milk2.jpg",
           "name": "Chicken Nuggets with Mexican Tacos",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 1 hour"
         },
         {
-          "imageURL": "assets/images/foodImageTwo.png",
+          "imageURL": "assets/images/milk3.jpg",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 45 mins"
+        },
+        {
+          "imageURL": "assets/images/milk4.jpg",
+          "name": "Roasted Chicken with Parmasean Cheese",
+          "cal": "1235 Kcal (500g)",
+          "time": "30 mins - 45 mins"
+        },
+        {
+          "imageURL": "assets/images/milk5.jpg",
           "name": "Roasted Chicken with Parmasean Cheese",
           "cal": "1235 Kcal (500g)",
           "time": "30 mins - 45 mins"
         },
       ]
+    },
+  ];
+
+  List<Map<String, String>> _mostPopularList = [
+    {
+      "imageURL": "assets/images/popular1.jpg",
+      "name": "Chicken Pizza",
+      "subtitle": ""
+    },
+    {
+      "imageURL": "assets/images/popular2.jpg",
+      "name": "Rice with Salmon Slices",
+      "subtitle": ""
+    },
+    {
+      "imageURL": "assets/images/popular3.jpg",
+      "name": "Pumpkin Soup",
+      "subtitle": ""
+    },
+    {
+      "imageURL": "assets/images/popular4.jpg",
+      "name": "American Pie",
+      "subtitle": ""
+    },
+    {
+      "imageURL": "assets/images/popular5.jpg",
+      "name": "Chicken Pizza",
+      "subtitle": ""
     },
   ];
 
@@ -427,9 +473,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: 10,
+        itemCount: _mostPopularList.length,
         itemBuilder: (BuildContext context, int index) {
-          return _mostPopularListTile();
+          return _mostPopularListTile(index);
         },
       ),
     );
@@ -520,8 +566,13 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Container(
                   height: _height * 0.181,
-                  child: Image.asset(
-                    'assets/images/foodImageOne.png', fit: BoxFit.fill,),
+                  foregroundDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0)),
+                    image: DecorationImage(
+                        image: AssetImage(
+                            'assets/images/topPicks1.jpg'),
+                        fit: BoxFit.fitWidth),
+                  ),
                 ),
                 Container(
                   height: _height * 0.181,
@@ -601,7 +652,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _mostPopularListTile(){
+  Widget _mostPopularListTile(int index){
     return Container(
       margin: EdgeInsets.only(left: _width * 0.069, right: _width * 0.069, bottom: 10.0),
       height: _height * 0.23,
@@ -627,9 +678,13 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Container(
                   height: _height * 0.23,
-                  width: _width * 0.94,
-                  child: Image.asset(
-                    'assets/images/foodImageTwo.png', fit: BoxFit.fill,),
+                  foregroundDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    image: DecorationImage(
+                        image: AssetImage(
+                            _mostPopularList[index]["imageURL"]),
+                        fit: BoxFit.fitWidth),
+                  ),
                 ),
                 Container(
                   height: _height * 0.23,
@@ -656,10 +711,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            child: Text("French Toast", style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.w500, fontSize: 20.0),),
+                            child: Text(_mostPopularList[index]["name"], style: Theme.of(context).textTheme.body1.copyWith(fontWeight: FontWeight.w500, fontSize: 20.0),),
                           ),
                           Container(
-                            child: Text("Lunch, Chicken , Italian", style: Theme.of(context).textTheme.body2.copyWith(fontWeight: FontWeight.w500),),
+                            margin: EdgeInsets.only(right: _width * 0.018),
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.only(right: 5.0),
+                                  child: Text("Protein", style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0, color: Colors.white.withOpacity(0.8),),
+                                  ),
+                                ),
+                                CircleIcon(color: Colors.white.withOpacity(0.8),),
+                                Padding(
+                                  padding: EdgeInsets.only(right: 5.0),
+                                  child: Text("Lunch",
+                                    style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0,  color: Colors.white.withOpacity(0.8),),
+                                  ),
+                                ),
+                                CircleIcon(color: Colors.white.withOpacity(0.8),),
+                                Text("Low Fat",
+                                  style: Theme.of(context).textTheme.body2.copyWith(fontSize: 10.0,  color: Colors.white.withOpacity(0.8),),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -699,7 +774,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             margin: EdgeInsets.only(left: _width * 0.026),
             child: CircleAvatar(
-              backgroundColor: Colors.green,
+              backgroundColor: Theme.of(context).accentColor,
                radius: _width * 0.116,
               backgroundImage: AssetImage(imagePath),
             ),

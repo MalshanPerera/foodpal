@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CircleIcon extends StatelessWidget {
+
+  final Color color;
+
+  CircleIcon({this.color});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +14,7 @@ class CircleIcon extends StatelessWidget {
       height: 5,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Theme.of(context).highlightColor
+          color: color ?? Theme.of(context).highlightColor
       ),
     );
   }

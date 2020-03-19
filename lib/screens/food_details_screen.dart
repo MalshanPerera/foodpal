@@ -79,18 +79,30 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
 
   List<Map<String, dynamic>> _similarRecipesList = [
     {
-      "imageURL": "",
+      "imageURL": "assets/images/similar2.jpg",
       "name": "Chicken Lasagna",
       "subtitle": "Mexican , Dinner",
-      "time": 6,
+      "time": 60,
     },
     {
-      "imageURL": "",
+      "imageURL": "assets/images/similar4.jpg",
       "name": "Mexican Jarritoes",
       "subtitle": "Mexican , Dinner",
-      "time": 9,
+      "time": 90,
     },
   ];
+
+  List<String> _tagList = ["Chicken", "Lunch", "Protien", "Low Crabs", "Meat"];
+  List<Widget> _tagContainerList = [];
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    _tagList.forEach((tag){
+      _tagContainerList.add(_tagContainer(tag));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -210,75 +222,9 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: _height * 0.355, left: _width * 0.069, right: _width* 0.069),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        width: _width*0.14,
-                        height: _height*0.035,
-                        margin: EdgeInsets.only(right: 3.0),
-                        decoration: BoxDecoration(
-                            color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('Chicken', style: TextStyle(color: Colors.white, fontSize: 10.0), ),
-                        ),
-                      ),
-                      Container(
-                        width: _width*0.14,
-                        height: _height*0.035,
-                        margin: EdgeInsets.only(right: 3.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('Lunch', style: TextStyle(color: Colors.white,fontSize: 10.0), ),
-                        ),
-                      ),
-                      Container(
-                        width: _width*0.14,
-                        height: _height*0.035,
-                        margin: EdgeInsets.only(right: 3.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('Protien', style: TextStyle(color: Colors.white,fontSize: 10.0), ),
-                        ),
-                      ),
-                      Container(
-                        width: _width*0.14,
-                        height: _height*0.035,
-                        margin: EdgeInsets.only(right: 3.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('Low Carbs', style: TextStyle(color: Colors.white, fontSize: 10.0), ),
-                        ),
-                      ),
-                      Container(
-                        width: _width*0.14,
-                        height: _height*0.035,
-                        margin: EdgeInsets.only(right: 3.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('Meat', style: TextStyle(color: Colors.white, fontSize: 10.0), ),
-                        ),
-                      ),
-
-                    ],
+                  child: Wrap(
+                    direction: Axis.horizontal,
+                    children: _tagContainerList
                   ),
                 ),
                 Container(
@@ -480,6 +426,22 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
     );
   }
 
+  Widget _tagContainer(String tag){
+    return Container(
+      width: _width*0.14,
+      height: _height*0.035,
+      margin: EdgeInsets.only(right: 3.0),
+      decoration: BoxDecoration(
+        color: Theme.of(context).highlightColor,
+        borderRadius: BorderRadius.all(Radius.circular(6.0)),
+      ),
+      child: Container(
+        alignment: Alignment.center,
+        child: Text(tag, style: TextStyle(color: Colors.white, fontSize: 10.0), ),
+      ),
+    );
+  }
+
   Widget _ingredientsTab(int index){
     return Container(
       decoration: BoxDecoration(
@@ -567,9 +529,12 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
             child: Stack(
               children: <Widget>[
                 Container(
-                  decoration: BoxDecoration(
-                    color: Colors.red,
+                  foregroundDecoration: BoxDecoration(
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(5.0), topRight: Radius.circular(5.0)),
+                    image: DecorationImage(
+                        image: AssetImage(
+                            _similarRecipesList[index]["imageURL"]),
+                        fit: BoxFit.fitWidth),
                   ),
                 ),
                 Container(

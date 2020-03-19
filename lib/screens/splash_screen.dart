@@ -38,6 +38,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed(FoodDetailsScreenRoute);
+    Navigator.of(context).pushReplacementNamed(LandingScreenRoute);
   }
 }
