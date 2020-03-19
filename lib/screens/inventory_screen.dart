@@ -94,12 +94,16 @@ class _InventoryScreenState extends State<InventoryScreen> {
           children: <Widget>[
             InkWell(
               child: Container(
+                decoration: BoxDecoration(
+                    color: _currentPageIndex == 0
+                        ? Theme.of(context).primaryColor
+                        : Theme.of(context).backgroundColor,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(6.0),
+                        bottomLeft: Radius.circular(6.0))),
                 height: Utils.getDesignHeight(32),
                 width: Utils.getDesignWidth(77),
                 alignment: Alignment.center,
-                color: _currentPageIndex == 0
-                    ? Theme.of(context).primaryColor
-                    : Theme.of(context).backgroundColor,
                 child: Text(
                   "Fruits",
                   style: _currentPageIndex == 0
@@ -126,7 +130,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
               margin: EdgeInsets.only(
                   top: _height * 0.007, bottom: _height * 0.007),
               color: Theme.of(context).highlightColor,
-              width: 1,
+              width: 0.5,
             ),
             InkWell(
               child: Container(
@@ -198,16 +202,21 @@ class _InventoryScreenState extends State<InventoryScreen> {
               margin: EdgeInsets.only(
                   top: _height * 0.007, bottom: _height * 0.007),
               color: Theme.of(context).highlightColor,
-              width: 1,
+              width: 0.5,
             ),
             InkWell(
               child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(6.0),
+                      bottomRight: Radius.circular(6.0)),
+                  color: _currentPageIndex == 3
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).backgroundColor,
+                ),
                 height: Utils.getDesignHeight(32),
                 width: Utils.getDesignWidth(77),
                 alignment: Alignment.center,
-                color: _currentPageIndex == 3
-                    ? Theme.of(context).primaryColor
-                    : Theme.of(context).backgroundColor,
                 child: Text(
                   "Vegetables",
                   style: _currentPageIndex == 3
