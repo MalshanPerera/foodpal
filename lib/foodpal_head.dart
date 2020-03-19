@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpal/screens/favourites_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_email_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_otp_screen.dart';
 import 'package:foodpal/screens/forgot_password/forgot_password_screen.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
             ForgotPasswordEmailScreen(),
         ForgotPasswordOTPScreenRoute: (context) => ForgotPasswordOTPScreen(),
         ForgotPasswordScreenRoute: (context) => ForgotPasswordScreen(),
+        FavouritesScreenRoute: (context) => FavoiuritesScreen()
       },
     );
   }

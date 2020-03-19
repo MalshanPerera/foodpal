@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     validate() {
       if (_usernameController.text.length != 0 &&
           _passController.text.length != 0) {
-        Navigator.of(context).pushReplacementNamed(HomeScreenRoute);
+        Navigator.of(context).pushReplacementNamed(FavouritesScreenRoute);
       }
     }
 
